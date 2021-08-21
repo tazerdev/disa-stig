@@ -38,6 +38,13 @@
       tags:
         - always
 
+    # we could cast a wider net for things like gdm or kdm, but this is a good
+    # first effort
+    - name: "Setting gui fact"
+      ansible.builtin.set_fact:
+        gui: true
+      when: "'xorg-x11-server-Xorg' in ansible_facts.packages"
+
   # ---------------------------------------------------------------------------
   # roles
   # ---------------------------------------------------------------------------
