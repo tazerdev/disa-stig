@@ -107,7 +107,7 @@
     option: banner-message-enable
     value: "true"
     section: "org/gnome/login-screen"
-  when: gnome|bool
+  when: gui|bool
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000023-GPOS-00006
@@ -125,7 +125,7 @@
     option: banner-message-text
     value: "{{ banner_message }}"
     section: "org/gnome/login-screen"
-  when: gnome|bool
+  when: gui|bool
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000023-GPOS-00006
