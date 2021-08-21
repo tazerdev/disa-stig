@@ -17,10 +17,7 @@
     - shell
 
 - name: "The RHEL 8 operating system must implement the Endpoint Security for Linux Threat Prevention tool."
-  ansible.builtin.dnf:
-    name: mcafeetp
-    state: latest
-    update_cache: true
+    /usr/bin/rpm -q mcafeetp
   notify: "restart mfetpd"
   tags:
     - rhel8-disa-stig-v1r3
