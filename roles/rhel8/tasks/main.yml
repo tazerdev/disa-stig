@@ -90,7 +90,7 @@
 - name: "RHEL 8 must display the Standard Mandatory DoD Notice and Consent Banner before granting local or remote access to the system via a ssh logon."
   ansible.builtin.lineinfile:
     dest: /etc/ssh/sshd_config
-    regexp: '^(?=[\s]*+[^#])[^#]*Banner'
+    regexp: "(?i)^#?Banner"
     line: Banner /etc/issue
   notify: "restart sshd"
   tags:
