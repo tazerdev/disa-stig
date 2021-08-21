@@ -1,0 +1,73 @@
+---
+- hosts: all
+  connection: local
+  gather_facts: true
+  become: true
+
+  # ---------------------------------------------------------------------------
+  # vars
+  # ---------------------------------------------------------------------------
+  vars:
+    # we'll set this to true on a task-by-task basis if the stig requires a
+    # reboot after changing a control
+    needs_rebooting: false
+
+    # toggle this to allow the system to be rebooted, if required
+    allow_reboot: false
+
+  # ---------------------------------------------------------------------------
+  # pre-tasks
+  # ---------------------------------------------------------------------------
+  pre_tasks:
+    # load service state up front so we can prevent actions on non-existent
+    # services
+    - name: "Loading list of installed services."
+      ansible.builtin.service_facts:
+      changed_when: false
+      check_mode: false
+      tags:
+        - always
+
+    # load our package list up front so we can reduce time spent on package
+    # dependent controls
+    - name: "Loading list of installed packages."
+      ansible.builtin.package_facts:
+        manager: auto
+      changed_when: false
+      check_mode: false
+      tags:
+        - always
+
+  # ---------------------------------------------------------------------------
+  # roles
+  # ---------------------------------------------------------------------------
+  roles:
+    - { role: rhel8 }
+
+  # ---------------------------------------------------------------------------
+  # post-tasks
+  # ---------------------------------------------------------------------------
+  post_tasks:
+    # if yum-utils is installed we can check if the kernel or any any core
+    # libraries/services have been updated
+    - name: "Checking if system needs restarting."
+      ansible.builtin.shell: |
+        /usr/bin/needs-restarting -r
+      register: needs_restarting
+      when: "'yum-utils' in ansible_facts.packages"
+      changed_when: false
+      check_mode: false
+      tags:
+        - always
+
+    - name: "Updating reboot fact."
+      ansible.builtin.set_fact:
+        needs_rebooting: true
+      when: needs_restarting is defined and needs_restarting
+      tags:
+        - always
+
+    - name: Reboot a slow machine that might have lots of updates to apply
+      ansible.builtin.reboot:
+        reboot_timeout: 3600
+      when: allow_reboot and needs_rebooting
