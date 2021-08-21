@@ -1,0 +1,6822 @@
+---
+- name: "RHEL 8 must be a vendor-supported release."
+  shell: |
+    /bin/false
+  register: RHEL_08_010000_result
+  changed_when: RHEL_08_010000_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230221r743913_rule
+    - RHEL-08-010000
+    - V-230221
+    - high
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 vendor packaged system security patches and updates must be installed and up to date."
+  shell: |
+    /bin/false
+  register: RHEL_08_010010_result
+  changed_when: RHEL_08_010010_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230222r627750_rule
+    - RHEL-08-010010
+    - V-230222
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must implement NIST FIPS-validated cryptography for the following: to provision digital signatures, to generate cryptographic hashes, and to protect data requiring data-at-rest protections in accordance with applicable federal laws, Executive Orders, directives, policies, regulations, and standards."
+  shell: |
+    /bin/false
+  register: RHEL_08_010020_result
+  changed_when: RHEL_08_010020_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000033-GPOS-00014
+    - SV-230223r627750_rule
+    - RHEL-08-010020
+    - V-230223
+    - high
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "All RHEL 8 local disk partitions must implement cryptographic mechanisms to prevent unauthorized disclosure or modification of all information that requires at rest protection."
+  shell: |
+    /bin/false
+  register: RHEL_08_010030_result
+  changed_when: RHEL_08_010030_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000185-GPOS-00079
+    - SV-230224r627750_rule
+    - RHEL-08-010030
+    - V-230224
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must display the Standard Mandatory DoD Notice and Consent Banner before granting local or remote access to the system via a ssh logon."
+  shell: |
+    /bin/false
+  register: RHEL_08_010040_result
+  changed_when: RHEL_08_010040_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000023-GPOS-00006
+    - SV-230225r627750_rule
+    - RHEL-08-010040
+    - V-230225
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must display the Standard Mandatory DoD Notice and Consent Banner before granting local or remote access to the system via a graphical user logon."
+  shell: |
+    /bin/false
+  register: RHEL_08_010050_result
+  changed_when: RHEL_08_010050_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000023-GPOS-00006
+    - SV-230226r743916_rule
+    - RHEL-08-010050
+    - V-230226
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must display the Standard Mandatory DoD Notice and Consent Banner before granting local or remote access to the system via a command line user logon."
+  shell: |
+    /bin/false
+  register: RHEL_08_010060_result
+  changed_when: RHEL_08_010060_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000023-GPOS-00006
+    - SV-230227r627750_rule
+    - RHEL-08-010060
+    - V-230227
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "All RHEL 8 remote access methods must be monitored."
+  shell: |
+    /bin/false
+  register: RHEL_08_010070_result
+  changed_when: RHEL_08_010070_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000032-GPOS-00013
+    - SV-230228r627750_rule
+    - RHEL-08-010070
+    - V-230228
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8, for PKI-based authentication, must validate certificates by constructing a certification path (which includes status information) to an accepted trust anchor."
+  shell: |
+    /bin/false
+  register: RHEL_08_010090_result
+  changed_when: RHEL_08_010090_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000066-GPOS-00034
+    - SV-230229r627750_rule
+    - RHEL-08-010090
+    - V-230229
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8, for certificate-based authentication, must enforce authorized access to the corresponding private key."
+  shell: |
+    /bin/false
+  register: RHEL_08_010100_result
+  changed_when: RHEL_08_010100_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000067-GPOS-00035
+    - SV-230230r627750_rule
+    - RHEL-08-010100
+    - V-230230
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must encrypt all stored passwords with a FIPS 140-2 approved cryptographic hashing algorithm."
+  shell: |
+    /bin/false
+  register: RHEL_08_010110_result
+  changed_when: RHEL_08_010110_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000073-GPOS-00041
+    - SV-230231r627750_rule
+    - RHEL-08-010110
+    - V-230231
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must employ FIPS 140-2 approved cryptographic hashing algorithms for all stored passwords."
+  shell: |
+    /bin/false
+  register: RHEL_08_010120_result
+  changed_when: RHEL_08_010120_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000073-GPOS-00041
+    - SV-230232r627750_rule
+    - RHEL-08-010120
+    - V-230232
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 password-auth file must be configured to use a sufficient number of hashing rounds."
+  shell: |
+    /bin/false
+  register: RHEL_08_010130_result
+  changed_when: RHEL_08_010130_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000073-GPOS-00041
+    - SV-230233r743919_rule
+    - RHEL-08-010130
+    - V-230233
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 operating systems booted with United Extensible Firmware Interface (UEFI) must require authentication upon booting into single-user mode and maintenance."
+  shell: |
+    /bin/false
+  register: RHEL_08_010140_result
+  changed_when: RHEL_08_010140_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000080-GPOS-00048
+    - SV-230234r743922_rule
+    - RHEL-08-010140
+    - V-230234
+    - high
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 operating systems booted with a BIOS must require authentication upon booting into single-user and maintenance modes."
+  shell: |
+    /bin/false
+  register: RHEL_08_010150_result
+  changed_when: RHEL_08_010150_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000080-GPOS-00048
+    - SV-230235r743925_rule
+    - RHEL-08-010150
+    - V-230235
+    - high
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 operating systems must require authentication upon booting into rescue mode."
+  shell: |
+    /bin/false
+  register: RHEL_08_010151_result
+  changed_when: RHEL_08_010151_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000080-GPOS-00048
+    - SV-230236r743928_rule
+    - RHEL-08-010151
+    - V-230236
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 pam_unix.so module must be configured in the password-auth file to use a FIPS 140-2 approved cryptographic hashing algorithm for system authentication."
+  shell: |
+    /bin/false
+  register: RHEL_08_010160_result
+  changed_when: RHEL_08_010160_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000120-GPOS-00061
+    - SV-230237r743931_rule
+    - RHEL-08-010160
+    - V-230237
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must prevent system daemons from using Kerberos for authentication."
+  shell: |
+    /bin/false
+  register: RHEL_08_010161_result
+  changed_when: RHEL_08_010161_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000120-GPOS-00061
+    - SV-230238r646862_rule
+    - RHEL-08-010161
+    - V-230238
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The krb5-workstation package must not be installed on RHEL 8."
+  shell: |
+    /bin/false
+  register: RHEL_08_010162_result
+  changed_when: RHEL_08_010162_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000120-GPOS-00061
+    - SV-230239r646864_rule
+    - RHEL-08-010162
+    - V-230239
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must use a Linux Security Module configured to enforce limits on system services."
+  shell: |
+    /bin/false
+  register: RHEL_08_010170_result
+  changed_when: RHEL_08_010170_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000134-GPOS-00068
+    - SV-230240r627750_rule
+    - RHEL-08-010170
+    - V-230240
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must have policycoreutils package installed."
+  shell: |
+    /bin/false
+  register: RHEL_08_010171_result
+  changed_when: RHEL_08_010171_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000134-GPOS-00068
+    - SV-230241r627750_rule
+    - RHEL-08-010171
+    - V-230241
+    - low
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "All RHEL 8 public directories must be owned by root or a system account to prevent unauthorized and unintended information transferred via shared system resources."
+  shell: |
+    /bin/false
+  register: RHEL_08_010180_result
+  changed_when: RHEL_08_010180_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000138-GPOS-00069
+    - SV-230242r627750_rule
+    - RHEL-08-010180
+    - V-230242
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "A sticky bit must be set on all RHEL 8 public directories to prevent unauthorized and unintended information transferred via shared system resources."
+  shell: |
+    /bin/false
+  register: RHEL_08_010190_result
+  changed_when: RHEL_08_010190_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000138-GPOS-00069
+    - SV-230243r627750_rule
+    - RHEL-08-010190
+    - V-230243
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must be configured so that all network connections associated with SSH traffic are terminated at the end of the session or after 10 minutes of inactivity, except to fulfill documented and validated mission requirements."
+  shell: |
+    /bin/false
+  register: RHEL_08_010200_result
+  changed_when: RHEL_08_010200_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000163-GPOS-00072
+    - SV-230244r743934_rule
+    - RHEL-08-010200
+    - V-230244
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 /var/log/messages file must have mode 0640 or less permissive."
+  shell: |
+    /bin/false
+  register: RHEL_08_010210_result
+  changed_when: RHEL_08_010210_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000206-GPOS-00084
+    - SV-230245r627750_rule
+    - RHEL-08-010210
+    - V-230245
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 /var/log/messages file must be owned by root."
+  shell: |
+    /bin/false
+  register: RHEL_08_010220_result
+  changed_when: RHEL_08_010220_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000206-GPOS-00084
+    - SV-230246r627750_rule
+    - RHEL-08-010220
+    - V-230246
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 /var/log/messages file must be group-owned by root."
+  shell: |
+    /bin/false
+  register: RHEL_08_010230_result
+  changed_when: RHEL_08_010230_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000206-GPOS-00084
+    - SV-230247r627750_rule
+    - RHEL-08-010230
+    - V-230247
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 /var/log directory must have mode 0755 or less permissive."
+  shell: |
+    /bin/false
+  register: RHEL_08_010240_result
+  changed_when: RHEL_08_010240_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000206-GPOS-00084
+    - SV-230248r627750_rule
+    - RHEL-08-010240
+    - V-230248
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 /var/log directory must be owned by root."
+  shell: |
+    /bin/false
+  register: RHEL_08_010250_result
+  changed_when: RHEL_08_010250_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000206-GPOS-00084
+    - SV-230249r627750_rule
+    - RHEL-08-010250
+    - V-230249
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 /var/log directory must be group-owned by root."
+  shell: |
+    /bin/false
+  register: RHEL_08_010260_result
+  changed_when: RHEL_08_010260_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000206-GPOS-00084
+    - SV-230250r627750_rule
+    - RHEL-08-010260
+    - V-230250
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 SSH server must be configured to use only Message Authentication Codes (MACs) employing FIPS 140-2 validated cryptographic hash algorithms."
+  shell: |
+    /bin/false
+  register: RHEL_08_010290_result
+  changed_when: RHEL_08_010290_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000250-GPOS-00093
+    - SV-230251r743937_rule
+    - RHEL-08-010290
+    - V-230251
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 operating system must implement DoD-approved encryption to protect the confidentiality of SSH server connections."
+  shell: |
+    /bin/false
+  register: RHEL_08_010291_result
+  changed_when: RHEL_08_010291_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000250-GPOS-00093
+    - SV-230252r743940_rule
+    - RHEL-08-010291
+    - V-230252
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must ensure the SSH server uses strong entropy."
+  shell: |
+    /bin/false
+  register: RHEL_08_010292_result
+  changed_when: RHEL_08_010292_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230253r627750_rule
+    - RHEL-08-010292
+    - V-230253
+    - low
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 operating system must implement DoD-approved encryption in the OpenSSL package."
+  shell: |
+    /bin/false
+  register: RHEL_08_010293_result
+  changed_when: RHEL_08_010293_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000250-GPOS-00093
+    - SV-230254r627750_rule
+    - RHEL-08-010293
+    - V-230254
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 operating system must implement DoD-approved TLS encryption in the OpenSSL package."
+  shell: |
+    /bin/false
+  register: RHEL_08_010294_result
+  changed_when: RHEL_08_010294_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000250-GPOS-00093
+    - SV-230255r627750_rule
+    - RHEL-08-010294
+    - V-230255
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 operating system must implement DoD-approved TLS encryption in the GnuTLS package."
+  shell: |
+    /bin/false
+  register: RHEL_08_010295_result
+  changed_when: RHEL_08_010295_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000250-GPOS-00093
+    - SV-230256r627750_rule
+    - RHEL-08-010295
+    - V-230256
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 system commands must have mode 0755 or less permissive."
+  shell: |
+    /bin/false
+  register: RHEL_08_010300_result
+  changed_when: RHEL_08_010300_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000259-GPOS-00100
+    - SV-230257r627750_rule
+    - RHEL-08-010300
+    - V-230257
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 system commands must be owned by root."
+  shell: |
+    /bin/false
+  register: RHEL_08_010310_result
+  changed_when: RHEL_08_010310_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000259-GPOS-00100
+    - SV-230258r627750_rule
+    - RHEL-08-010310
+    - V-230258
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 system commands must be group-owned by root or a system account."
+  shell: |
+    /bin/false
+  register: RHEL_08_010320_result
+  changed_when: RHEL_08_010320_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000259-GPOS-00100
+    - SV-230259r627750_rule
+    - RHEL-08-010320
+    - V-230259
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 library files must have mode 0755 or less permissive."
+  shell: |
+    /bin/false
+  register: RHEL_08_010330_result
+  changed_when: RHEL_08_010330_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000259-GPOS-00100
+    - SV-230260r627750_rule
+    - RHEL-08-010330
+    - V-230260
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 library files must be owned by root."
+  shell: |
+    /bin/false
+  register: RHEL_08_010340_result
+  changed_when: RHEL_08_010340_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000259-GPOS-00100
+    - SV-230261r627750_rule
+    - RHEL-08-010340
+    - V-230261
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 library files must be group-owned by root or a system account."
+  shell: |
+    /bin/false
+  register: RHEL_08_010350_result
+  changed_when: RHEL_08_010350_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000259-GPOS-00100
+    - SV-230262r627750_rule
+    - RHEL-08-010350
+    - V-230262
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 file integrity tool must notify the system administrator when changes to the baseline configuration or anomalies in the operation of any security functions are discovered within an organizationally defined frequency."
+  shell: |
+    /bin/false
+  register: RHEL_08_010360_result
+  changed_when: RHEL_08_010360_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000363-GPOS-00150
+    - SV-230263r627750_rule
+    - RHEL-08-010360
+    - V-230263
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must prevent the installation of software, patches, service packs, device drivers, or operating system components from a repository without verification they have been digitally signed using a certificate that is issued by a Certificate Authority (CA) that is recognized and approved by the organization."
+  shell: |
+    /bin/false
+  register: RHEL_08_010370_result
+  changed_when: RHEL_08_010370_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000366-GPOS-00153
+    - SV-230264r627750_rule
+    - RHEL-08-010370
+    - V-230264
+    - high
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must prevent the installation of software, patches, service packs, device drivers, or operating system components of local packages without verification they have been digitally signed using a certificate that is issued by a Certificate Authority (CA) that is recognized and approved by the organization."
+  shell: |
+    /bin/false
+  register: RHEL_08_010371_result
+  changed_when: RHEL_08_010371_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000366-GPOS-00153
+    - SV-230265r627750_rule
+    - RHEL-08-010371
+    - V-230265
+    - high
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must prevent the loading of a new kernel for later execution."
+  shell: |
+    /bin/false
+  register: RHEL_08_010372_result
+  changed_when: RHEL_08_010372_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000366-GPOS-00153
+    - SV-230266r627750_rule
+    - RHEL-08-010372
+    - V-230266
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must enable kernel parameters to enforce discretionary access control on symlinks."
+  shell: |
+    /bin/false
+  register: RHEL_08_010373_result
+  changed_when: RHEL_08_010373_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000312-GPOS-00122
+    - SV-230267r627750_rule
+    - RHEL-08-010373
+    - V-230267
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must enable kernel parameters to enforce discretionary access control on hardlinks."
+  shell: |
+    /bin/false
+  register: RHEL_08_010374_result
+  changed_when: RHEL_08_010374_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000312-GPOS-00122
+    - SV-230268r627750_rule
+    - RHEL-08-010374
+    - V-230268
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must restrict access to the kernel message buffer."
+  shell: |
+    /bin/false
+  register: RHEL_08_010375_result
+  changed_when: RHEL_08_010375_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000138-GPOS-00069
+    - SV-230269r627750_rule
+    - RHEL-08-010375
+    - V-230269
+    - low
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must prevent kernel profiling by unprivileged users."
+  shell: |
+    /bin/false
+  register: RHEL_08_010376_result
+  changed_when: RHEL_08_010376_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000138-GPOS-00069
+    - SV-230270r627750_rule
+    - RHEL-08-010376
+    - V-230270
+    - low
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must require users to provide a password for privilege escalation."
+  shell: |
+    /bin/false
+  register: RHEL_08_010380_result
+  changed_when: RHEL_08_010380_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000373-GPOS-00156
+    - SV-230271r627750_rule
+    - RHEL-08-010380
+    - V-230271
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must require users to reauthenticate for privilege escalation."
+  shell: |
+    /bin/false
+  register: RHEL_08_010381_result
+  changed_when: RHEL_08_010381_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000373-GPOS-00156
+    - SV-230272r627750_rule
+    - RHEL-08-010381
+    - V-230272
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must have the packages required for multifactor authentication installed."
+  shell: |
+    /bin/false
+  register: RHEL_08_010390_result
+  changed_when: RHEL_08_010390_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000375-GPOS-00160
+    - SV-230273r743943_rule
+    - RHEL-08-010390
+    - V-230273
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must implement certificate status checking for multifactor authentication."
+  shell: |
+    /bin/false
+  register: RHEL_08_010400_result
+  changed_when: RHEL_08_010400_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000375-GPOS-00160
+    - SV-230274r743945_rule
+    - RHEL-08-010400
+    - V-230274
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must accept Personal Identity Verification (PIV) credentials."
+  shell: |
+    /bin/false
+  register: RHEL_08_010410_result
+  changed_when: RHEL_08_010410_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000376-GPOS-00161
+    - SV-230275r627750_rule
+    - RHEL-08-010410
+    - V-230275
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must implement non-executable data to protect its memory from unauthorized code execution."
+  shell: |
+    /bin/false
+  register: RHEL_08_010420_result
+  changed_when: RHEL_08_010420_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000433-GPOS-00192
+    - SV-230276r627750_rule
+    - RHEL-08-010420
+    - V-230276
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must clear the page allocator to prevent use-after-free attacks."
+  shell: |
+    /bin/false
+  register: RHEL_08_010421_result
+  changed_when: RHEL_08_010421_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000134-GPOS-00068
+    - SV-230277r627750_rule
+    - RHEL-08-010421
+    - V-230277
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must disable virtual syscalls."
+  shell: |
+    /bin/false
+  register: RHEL_08_010422_result
+  changed_when: RHEL_08_010422_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000134-GPOS-00068
+    - SV-230278r743948_rule
+    - RHEL-08-010422
+    - V-230278
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must clear SLUB/SLAB objects to prevent use-after-free attacks."
+  shell: |
+    /bin/false
+  register: RHEL_08_010423_result
+  changed_when: RHEL_08_010423_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000134-GPOS-00068
+    - SV-230279r627750_rule
+    - RHEL-08-010423
+    - V-230279
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must implement address space layout randomization (ASLR) to protect its memory from unauthorized code execution."
+  shell: |
+    /bin/false
+  register: RHEL_08_010430_result
+  changed_when: RHEL_08_010430_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000433-GPOS-00193
+    - SV-230280r627750_rule
+    - RHEL-08-010430
+    - V-230280
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "YUM must remove all software components after updated versions have been installed on RHEL 8."
+  shell: |
+    /bin/false
+  register: RHEL_08_010440_result
+  changed_when: RHEL_08_010440_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000437-GPOS-00194
+    - SV-230281r627750_rule
+    - RHEL-08-010440
+    - V-230281
+    - low
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must enable the SELinux targeted policy."
+  shell: |
+    /bin/false
+  register: RHEL_08_010450_result
+  changed_when: RHEL_08_010450_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000445-GPOS-00199
+    - SV-230282r627750_rule
+    - RHEL-08-010450
+    - V-230282
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "There must be no shosts.equiv files on the RHEL 8 operating system."
+  shell: |
+    /bin/false
+  register: RHEL_08_010460_result
+  changed_when: RHEL_08_010460_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230283r627750_rule
+    - RHEL-08-010460
+    - V-230283
+    - high
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "There must be no .shosts files on the RHEL 8 operating system."
+  shell: |
+    /bin/false
+  register: RHEL_08_010470_result
+  changed_when: RHEL_08_010470_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230284r627750_rule
+    - RHEL-08-010470
+    - V-230284
+    - high
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must enable the hardware random number generator entropy gatherer service."
+  shell: |
+    /bin/false
+  register: RHEL_08_010471_result
+  changed_when: RHEL_08_010471_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230285r627750_rule
+    - RHEL-08-010471
+    - V-230285
+    - low
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 SSH public host key files must have mode 0644 or less permissive."
+  shell: |
+    /bin/false
+  register: RHEL_08_010480_result
+  changed_when: RHEL_08_010480_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230286r627750_rule
+    - RHEL-08-010480
+    - V-230286
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 SSH private host key files must have mode 0600 or less permissive."
+  shell: |
+    /bin/false
+  register: RHEL_08_010490_result
+  changed_when: RHEL_08_010490_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230287r743951_rule
+    - RHEL-08-010490
+    - V-230287
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 SSH daemon must perform strict mode checking of home directory configuration files."
+  shell: |
+    /bin/false
+  register: RHEL_08_010500_result
+  changed_when: RHEL_08_010500_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230288r627750_rule
+    - RHEL-08-010500
+    - V-230288
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 SSH daemon must not allow compression or must only allow compression after successful authentication."
+  shell: |
+    /bin/false
+  register: RHEL_08_010510_result
+  changed_when: RHEL_08_010510_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230289r743954_rule
+    - RHEL-08-010510
+    - V-230289
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 SSH daemon must not allow authentication using known host’s authentication."
+  shell: |
+    /bin/false
+  register: RHEL_08_010520_result
+  changed_when: RHEL_08_010520_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230290r627750_rule
+    - RHEL-08-010520
+    - V-230290
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 SSH daemon must not allow Kerberos authentication, except to fulfill documented and validated mission requirements."
+  shell: |
+    /bin/false
+  register: RHEL_08_010521_result
+  changed_when: RHEL_08_010521_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230291r743957_rule
+    - RHEL-08-010521
+    - V-230291
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must use a separate file system for /var."
+  shell: |
+    /bin/false
+  register: RHEL_08_010540_result
+  changed_when: RHEL_08_010540_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230292r627750_rule
+    - RHEL-08-010540
+    - V-230292
+    - low
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must use a separate file system for /var/log."
+  shell: |
+    /bin/false
+  register: RHEL_08_010541_result
+  changed_when: RHEL_08_010541_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230293r627750_rule
+    - RHEL-08-010541
+    - V-230293
+    - low
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must use a separate file system for the system audit data path."
+  shell: |
+    /bin/false
+  register: RHEL_08_010542_result
+  changed_when: RHEL_08_010542_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230294r627750_rule
+    - RHEL-08-010542
+    - V-230294
+    - low
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "A separate RHEL 8 filesystem must be used for the /tmp directory."
+  shell: |
+    /bin/false
+  register: RHEL_08_010543_result
+  changed_when: RHEL_08_010543_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230295r627750_rule
+    - RHEL-08-010543
+    - V-230295
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must not permit direct logons to the root account using remote access via SSH."
+  shell: |
+    /bin/false
+  register: RHEL_08_010550_result
+  changed_when: RHEL_08_010550_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000109-GPOS-00056
+    - SV-230296r627750_rule
+    - RHEL-08-010550
+    - V-230296
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The auditd service must be running in RHEL 8."
+  shell: |
+    /bin/false
+  register: RHEL_08_010560_result
+  changed_when: RHEL_08_010560_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230297r627750_rule
+    - RHEL-08-010560
+    - V-230297
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The rsyslog service must be running in RHEL 8."
+  shell: |
+    /bin/false
+  register: RHEL_08_010561_result
+  changed_when: RHEL_08_010561_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230298r627750_rule
+    - RHEL-08-010561
+    - V-230298
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must prevent files with the setuid and setgid bit set from being executed on file systems that contain user home directories."
+  shell: |
+    /bin/false
+  register: RHEL_08_010570_result
+  changed_when: RHEL_08_010570_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230299r627750_rule
+    - RHEL-08-010570
+    - V-230299
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must prevent files with the setuid and setgid bit set from being executed on the /boot directory."
+  shell: |
+    /bin/false
+  register: RHEL_08_010571_result
+  changed_when: RHEL_08_010571_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230300r743959_rule
+    - RHEL-08-010571
+    - V-230300
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must prevent special devices on non-root local partitions."
+  shell: |
+    /bin/false
+  register: RHEL_08_010580_result
+  changed_when: RHEL_08_010580_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230301r627750_rule
+    - RHEL-08-010580
+    - V-230301
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must prevent code from being executed on file systems that contain user home directories."
+  shell: |
+    /bin/false
+  register: RHEL_08_010590_result
+  changed_when: RHEL_08_010590_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230302r627750_rule
+    - RHEL-08-010590
+    - V-230302
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must prevent special devices on file systems that are used with removable media."
+  shell: |
+    /bin/false
+  register: RHEL_08_010600_result
+  changed_when: RHEL_08_010600_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230303r627750_rule
+    - RHEL-08-010600
+    - V-230303
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must prevent code from being executed on file systems that are used with removable media."
+  shell: |
+    /bin/false
+  register: RHEL_08_010610_result
+  changed_when: RHEL_08_010610_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230304r627750_rule
+    - RHEL-08-010610
+    - V-230304
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must prevent files with the setuid and setgid bit set from being executed on file systems that are used with removable media."
+  shell: |
+    /bin/false
+  register: RHEL_08_010620_result
+  changed_when: RHEL_08_010620_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230305r627750_rule
+    - RHEL-08-010620
+    - V-230305
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must prevent code from being executed on file systems that are imported via Network File System (NFS)."
+  shell: |
+    /bin/false
+  register: RHEL_08_010630_result
+  changed_when: RHEL_08_010630_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230306r627750_rule
+    - RHEL-08-010630
+    - V-230306
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must prevent special devices on file systems that are imported via Network File System (NFS)."
+  shell: |
+    /bin/false
+  register: RHEL_08_010640_result
+  changed_when: RHEL_08_010640_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230307r627750_rule
+    - RHEL-08-010640
+    - V-230307
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must prevent files with the setuid and setgid bit set from being executed on file systems that are imported via Network File System (NFS)."
+  shell: |
+    /bin/false
+  register: RHEL_08_010650_result
+  changed_when: RHEL_08_010650_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230308r627750_rule
+    - RHEL-08-010650
+    - V-230308
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Local RHEL 8 initialization files must not execute world-writable programs."
+  shell: |
+    /bin/false
+  register: RHEL_08_010660_result
+  changed_when: RHEL_08_010660_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230309r627750_rule
+    - RHEL-08-010660
+    - V-230309
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must disable kernel dumps unless needed."
+  shell: |
+    /bin/false
+  register: RHEL_08_010670_result
+  changed_when: RHEL_08_010670_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230310r627750_rule
+    - RHEL-08-010670
+    - V-230310
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must disable the kernel.core_pattern."
+  shell: |
+    /bin/false
+  register: RHEL_08_010671_result
+  changed_when: RHEL_08_010671_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230311r627750_rule
+    - RHEL-08-010671
+    - V-230311
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must disable acquiring, saving, and processing core dumps."
+  shell: |
+    /bin/false
+  register: RHEL_08_010672_result
+  changed_when: RHEL_08_010672_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230312r627750_rule
+    - RHEL-08-010672
+    - V-230312
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must disable core dumps for all users."
+  shell: |
+    /bin/false
+  register: RHEL_08_010673_result
+  changed_when: RHEL_08_010673_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230313r627750_rule
+    - RHEL-08-010673
+    - V-230313
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must disable storing core dumps."
+  shell: |
+    /bin/false
+  register: RHEL_08_010674_result
+  changed_when: RHEL_08_010674_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230314r627750_rule
+    - RHEL-08-010674
+    - V-230314
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must disable core dump backtraces."
+  shell: |
+    /bin/false
+  register: RHEL_08_010675_result
+  changed_when: RHEL_08_010675_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230315r627750_rule
+    - RHEL-08-010675
+    - V-230315
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "For RHEL 8 systems using Domain Name Servers (DNS) resolution, at least two name servers must be configured."
+  shell: |
+    /bin/false
+  register: RHEL_08_010680_result
+  changed_when: RHEL_08_010680_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230316r627750_rule
+    - RHEL-08-010680
+    - V-230316
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Executable search paths within the initialization files of all local interactive RHEL 8 users must only contain paths that resolve to the system default or the users home directory."
+  shell: |
+    /bin/false
+  register: RHEL_08_010690_result
+  changed_when: RHEL_08_010690_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230317r627750_rule
+    - RHEL-08-010690
+    - V-230317
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "All RHEL 8 world-writable directories must be owned by root, sys, bin, or an application user."
+  shell: |
+    /bin/false
+  register: RHEL_08_010700_result
+  changed_when: RHEL_08_010700_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230318r743960_rule
+    - RHEL-08-010700
+    - V-230318
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "All RHEL 8 world-writable directories must be group-owned by root, sys, bin, or an application group."
+  shell: |
+    /bin/false
+  register: RHEL_08_010710_result
+  changed_when: RHEL_08_010710_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230319r743961_rule
+    - RHEL-08-010710
+    - V-230319
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "All RHEL 8 local interactive users must have a home directory assigned in the /etc/passwd file."
+  shell: |
+    /bin/false
+  register: RHEL_08_010720_result
+  changed_when: RHEL_08_010720_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230320r627750_rule
+    - RHEL-08-010720
+    - V-230320
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "All RHEL 8 local interactive user home directories must have mode 0750 or less permissive."
+  shell: |
+    /bin/false
+  register: RHEL_08_010730_result
+  changed_when: RHEL_08_010730_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230321r627750_rule
+    - RHEL-08-010730
+    - V-230321
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "All RHEL 8 local interactive user home directories must be group-owned by the home directory owner’s primary group."
+  shell: |
+    /bin/false
+  register: RHEL_08_010740_result
+  changed_when: RHEL_08_010740_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230322r743963_rule
+    - RHEL-08-010740
+    - V-230322
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "All RHEL 8 local interactive user home directories defined in the /etc/passwd file must exist."
+  shell: |
+    /bin/false
+  register: RHEL_08_010750_result
+  changed_when: RHEL_08_010750_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230323r627750_rule
+    - RHEL-08-010750
+    - V-230323
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "All RHEL 8 local interactive user accounts must be assigned a home directory upon creation."
+  shell: |
+    /bin/false
+  register: RHEL_08_010760_result
+  changed_when: RHEL_08_010760_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230324r627750_rule
+    - RHEL-08-010760
+    - V-230324
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "All RHEL 8 local initialization files must have mode 0740 or less permissive."
+  shell: |
+    /bin/false
+  register: RHEL_08_010770_result
+  changed_when: RHEL_08_010770_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230325r627750_rule
+    - RHEL-08-010770
+    - V-230325
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "All RHEL 8 local files and directories must have a valid owner."
+  shell: |
+    /bin/false
+  register: RHEL_08_010780_result
+  changed_when: RHEL_08_010780_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230326r627750_rule
+    - RHEL-08-010780
+    - V-230326
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "All RHEL 8 local files and directories must have a valid group owner."
+  shell: |
+    /bin/false
+  register: RHEL_08_010790_result
+  changed_when: RHEL_08_010790_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230327r627750_rule
+    - RHEL-08-010790
+    - V-230327
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "A separate RHEL 8 filesystem must be used for user home directories (such as /home or an equivalent)."
+  shell: |
+    /bin/false
+  register: RHEL_08_010800_result
+  changed_when: RHEL_08_010800_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230328r627750_rule
+    - RHEL-08-010800
+    - V-230328
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Unattended or automatic logon via the RHEL 8 graphical user interface must not be allowed."
+  shell: |
+    /bin/false
+  register: RHEL_08_010820_result
+  changed_when: RHEL_08_010820_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00229
+    - SV-230329r627750_rule
+    - RHEL-08-010820
+    - V-230329
+    - high
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must not allow users to override SSH environment variables."
+  shell: |
+    /bin/false
+  register: RHEL_08_010830_result
+  changed_when: RHEL_08_010830_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00229
+    - SV-230330r646870_rule
+    - RHEL-08-010830
+    - V-230330
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 temporary user accounts must be provisioned with an expiration time of 72 hours or less."
+  shell: |
+    /bin/false
+  register: RHEL_08_020000_result
+  changed_when: RHEL_08_020000_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000002-GPOS-00002
+    - SV-230331r627750_rule
+    - RHEL-08-020000
+    - V-230331
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must automatically lock an account when three unsuccessful logon attempts occur."
+  shell: |
+    /bin/false
+  register: RHEL_08_020010_result
+  changed_when: RHEL_08_020010_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000021-GPOS-00005
+    - SV-230332r627750_rule
+    - RHEL-08-020010
+    - V-230332
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must automatically lock an account when three unsuccessful logon attempts occur."
+  shell: |
+    /bin/false
+  register: RHEL_08_020011_result
+  changed_when: RHEL_08_020011_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000021-GPOS-00005
+    - SV-230333r743966_rule
+    - RHEL-08-020011
+    - V-230333
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must automatically lock an account when three unsuccessful logon attempts occur during a 15-minute time period."
+  shell: |
+    /bin/false
+  register: RHEL_08_020012_result
+  changed_when: RHEL_08_020012_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000021-GPOS-00005
+    - SV-230334r627750_rule
+    - RHEL-08-020012
+    - V-230334
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must automatically lock an account when three unsuccessful logon attempts occur during a 15-minute time period."
+  shell: |
+    /bin/false
+  register: RHEL_08_020013_result
+  changed_when: RHEL_08_020013_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000021-GPOS-00005
+    - SV-230335r743969_rule
+    - RHEL-08-020013
+    - V-230335
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must automatically lock an account until the locked account is released by an administrator when three unsuccessful logon attempts occur during a 15-minute time period."
+  shell: |
+    /bin/false
+  register: RHEL_08_020014_result
+  changed_when: RHEL_08_020014_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000021-GPOS-00005
+    - SV-230336r627750_rule
+    - RHEL-08-020014
+    - V-230336
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must automatically lock an account until the locked account is released by an administrator when three unsuccessful logon attempts occur during a 15-minute time period."
+  shell: |
+    /bin/false
+  register: RHEL_08_020015_result
+  changed_when: RHEL_08_020015_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000021-GPOS-00005
+    - SV-230337r743972_rule
+    - RHEL-08-020015
+    - V-230337
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must ensure account lockouts persist."
+  shell: |
+    /bin/false
+  register: RHEL_08_020016_result
+  changed_when: RHEL_08_020016_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000021-GPOS-00005
+    - SV-230338r627750_rule
+    - RHEL-08-020016
+    - V-230338
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must ensure account lockouts persist."
+  shell: |
+    /bin/false
+  register: RHEL_08_020017_result
+  changed_when: RHEL_08_020017_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000021-GPOS-00005
+    - SV-230339r743975_rule
+    - RHEL-08-020017
+    - V-230339
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must prevent system messages from being presented when three unsuccessful logon attempts occur."
+  shell: |
+    /bin/false
+  register: RHEL_08_020018_result
+  changed_when: RHEL_08_020018_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000021-GPOS-00005
+    - SV-230340r627750_rule
+    - RHEL-08-020018
+    - V-230340
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must prevent system messages from being presented when three unsuccessful logon attempts occur."
+  shell: |
+    /bin/false
+  register: RHEL_08_020019_result
+  changed_when: RHEL_08_020019_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000021-GPOS-00005
+    - SV-230341r743978_rule
+    - RHEL-08-020019
+    - V-230341
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must log user name information when unsuccessful logon attempts occur."
+  shell: |
+    /bin/false
+  register: RHEL_08_020020_result
+  changed_when: RHEL_08_020020_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000021-GPOS-00005
+    - SV-230342r646872_rule
+    - RHEL-08-020020
+    - V-230342
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must log user name information when unsuccessful logon attempts occur."
+  shell: |
+    /bin/false
+  register: RHEL_08_020021_result
+  changed_when: RHEL_08_020021_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000021-GPOS-00005
+    - SV-230343r743981_rule
+    - RHEL-08-020021
+    - V-230343
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must include root when automatically locking an account until the locked account is released by an administrator when three unsuccessful logon attempts occur during a 15-minute time period."
+  shell: |
+    /bin/false
+  register: RHEL_08_020022_result
+  changed_when: RHEL_08_020022_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000021-GPOS-00005
+    - SV-230344r646874_rule
+    - RHEL-08-020022
+    - V-230344
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must include root when automatically locking an account until the locked account is released by an administrator when three unsuccessful logon attempts occur during a 15-minute time period."
+  shell: |
+    /bin/false
+  register: RHEL_08_020023_result
+  changed_when: RHEL_08_020023_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000021-GPOS-00005
+    - SV-230345r743984_rule
+    - RHEL-08-020023
+    - V-230345
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must limit the number of concurrent sessions to ten for all accounts and/or account types."
+  shell: |
+    /bin/false
+  register: RHEL_08_020024_result
+  changed_when: RHEL_08_020024_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000027-GPOS-00008
+    - SV-230346r627750_rule
+    - RHEL-08-020024
+    - V-230346
+    - low
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must enable a user session lock until that user re-establishes access using established identification and authentication procedures for graphical user sessions."
+  shell: |
+    /bin/false
+  register: RHEL_08_020030_result
+  changed_when: RHEL_08_020030_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000028-GPOS-00009
+    - SV-230347r627750_rule
+    - RHEL-08-020030
+    - V-230347
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must enable a user session lock until that user re-establishes access using established identification and authentication procedures for command line sessions."
+  shell: |
+    /bin/false
+  register: RHEL_08_020040_result
+  changed_when: RHEL_08_020040_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000028-GPOS-00009
+    - SV-230348r743987_rule
+    - RHEL-08-020040
+    - V-230348
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must ensure session control is automatically started at shell initialization."
+  shell: |
+    /bin/false
+  register: RHEL_08_020041_result
+  changed_when: RHEL_08_020041_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000028-GPOS-00009
+    - SV-230349r627750_rule
+    - RHEL-08-020041
+    - V-230349
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must prevent users from disabling session control mechanisms."
+  shell: |
+    /bin/false
+  register: RHEL_08_020042_result
+  changed_when: RHEL_08_020042_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000028-GPOS-00009
+    - SV-230350r627750_rule
+    - RHEL-08-020042
+    - V-230350
+    - low
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must be able to initiate directly a session lock for all connection types using smartcard when the smartcard is removed."
+  shell: |
+    /bin/false
+  register: RHEL_08_020050_result
+  changed_when: RHEL_08_020050_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000028-GPOS-00009
+    - SV-230351r627750_rule
+    - RHEL-08-020050
+    - V-230351
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must automatically lock graphical user sessions after 15 minutes of inactivity."
+  shell: |
+    /bin/false
+  register: RHEL_08_020060_result
+  changed_when: RHEL_08_020060_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000029-GPOS-00010
+    - SV-230352r646876_rule
+    - RHEL-08-020060
+    - V-230352
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must automatically lock command line user sessions after 15 minutes of inactivity."
+  shell: |
+    /bin/false
+  register: RHEL_08_020070_result
+  changed_when: RHEL_08_020070_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000029-GPOS-00010
+    - SV-230353r627750_rule
+    - RHEL-08-020070
+    - V-230353
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must prevent a user from overriding the session lock-delay setting for the graphical user interface."
+  shell: |
+    /bin/false
+  register: RHEL_08_020080_result
+  changed_when: RHEL_08_020080_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000029-GPOS-00010
+    - SV-230354r743990_rule
+    - RHEL-08-020080
+    - V-230354
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must map the authenticated identity to the user or group account for PKI-based authentication."
+  shell: |
+    /bin/false
+  register: RHEL_08_020090_result
+  changed_when: RHEL_08_020090_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000068-GPOS-00036
+    - SV-230355r627750_rule
+    - RHEL-08-020090
+    - V-230355
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must ensure a password complexity module is enabled."
+  shell: |
+    /bin/false
+  register: RHEL_08_020100_result
+  changed_when: RHEL_08_020100_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000069-GPOS-00037
+    - SV-230356r627750_rule
+    - RHEL-08-020100
+    - V-230356
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must enforce password complexity by requiring that at least one uppercase character be used."
+  shell: |
+    /bin/false
+  register: RHEL_08_020110_result
+  changed_when: RHEL_08_020110_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000069-GPOS-00037
+    - SV-230357r627750_rule
+    - RHEL-08-020110
+    - V-230357
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must enforce password complexity by requiring that at least one lower-case character be used."
+  shell: |
+    /bin/false
+  register: RHEL_08_020120_result
+  changed_when: RHEL_08_020120_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000070-GPOS-00038
+    - SV-230358r627750_rule
+    - RHEL-08-020120
+    - V-230358
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must enforce password complexity by requiring that at least one numeric character be used."
+  shell: |
+    /bin/false
+  register: RHEL_08_020130_result
+  changed_when: RHEL_08_020130_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000071-GPOS-00039
+    - SV-230359r627750_rule
+    - RHEL-08-020130
+    - V-230359
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must require the maximum number of repeating characters of the same character class be limited to four when passwords are changed."
+  shell: |
+    /bin/false
+  register: RHEL_08_020140_result
+  changed_when: RHEL_08_020140_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000072-GPOS-00040
+    - SV-230360r627750_rule
+    - RHEL-08-020140
+    - V-230360
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must require the maximum number of repeating characters be limited to three when passwords are changed."
+  shell: |
+    /bin/false
+  register: RHEL_08_020150_result
+  changed_when: RHEL_08_020150_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000072-GPOS-00040
+    - SV-230361r627750_rule
+    - RHEL-08-020150
+    - V-230361
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must require the change of at least four character classes when passwords are changed."
+  shell: |
+    /bin/false
+  register: RHEL_08_020160_result
+  changed_when: RHEL_08_020160_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000072-GPOS-00040
+    - SV-230362r627750_rule
+    - RHEL-08-020160
+    - V-230362
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must require the change of at least 8 characters when passwords are changed."
+  shell: |
+    /bin/false
+  register: RHEL_08_020170_result
+  changed_when: RHEL_08_020170_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000072-GPOS-00040
+    - SV-230363r627750_rule
+    - RHEL-08-020170
+    - V-230363
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 passwords must have a 24 hours/1 day minimum password lifetime restriction in /etc/shadow."
+  shell: |
+    /bin/false
+  register: RHEL_08_020180_result
+  changed_when: RHEL_08_020180_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000075-GPOS-00043
+    - SV-230364r627750_rule
+    - RHEL-08-020180
+    - V-230364
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 passwords for new users or password changes must have a 24 hours/1 day minimum password lifetime restriction in /etc/logins.def."
+  shell: |
+    /bin/false
+  register: RHEL_08_020190_result
+  changed_when: RHEL_08_020190_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000075-GPOS-00043
+    - SV-230365r627750_rule
+    - RHEL-08-020190
+    - V-230365
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 user account passwords must have a 60-day maximum password lifetime restriction."
+  shell: |
+    /bin/false
+  register: RHEL_08_020200_result
+  changed_when: RHEL_08_020200_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000076-GPOS-00044
+    - SV-230366r646878_rule
+    - RHEL-08-020200
+    - V-230366
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 user account passwords must be configured so that existing passwords are restricted to a 60-day maximum lifetime."
+  shell: |
+    /bin/false
+  register: RHEL_08_020210_result
+  changed_when: RHEL_08_020210_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000076-GPOS-00044
+    - SV-230367r627750_rule
+    - RHEL-08-020210
+    - V-230367
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 passwords must be prohibited from reuse for a minimum of five generations."
+  shell: |
+    /bin/false
+  register: RHEL_08_020220_result
+  changed_when: RHEL_08_020220_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000077-GPOS-00045
+    - SV-230368r627750_rule
+    - RHEL-08-020220
+    - V-230368
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 passwords must have a minimum of 15 characters."
+  shell: |
+    /bin/false
+  register: RHEL_08_020230_result
+  changed_when: RHEL_08_020230_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000078-GPOS-00046
+    - SV-230369r627750_rule
+    - RHEL-08-020230
+    - V-230369
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 passwords for new users must have a minimum of 15 characters."
+  shell: |
+    /bin/false
+  register: RHEL_08_020231_result
+  changed_when: RHEL_08_020231_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000078-GPOS-00046
+    - SV-230370r627750_rule
+    - RHEL-08-020231
+    - V-230370
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 duplicate User IDs (UIDs) must not exist for interactive users."
+  shell: |
+    /bin/false
+  register: RHEL_08_020240_result
+  changed_when: RHEL_08_020240_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000104-GPOS-00051
+    - SV-230371r627750_rule
+    - RHEL-08-020240
+    - V-230371
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must implement smart card logon for multifactor authentication for access to interactive accounts."
+  shell: |
+    /bin/false
+  register: RHEL_08_020250_result
+  changed_when: RHEL_08_020250_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000105-GPOS-00052
+    - SV-230372r627750_rule
+    - RHEL-08-020250
+    - V-230372
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 account identifiers (individuals, groups, roles, and devices) must be disabled after 35 days of inactivity."
+  shell: |
+    /bin/false
+  register: RHEL_08_020260_result
+  changed_when: RHEL_08_020260_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000118-GPOS-00060
+    - SV-230373r627750_rule
+    - RHEL-08-020260
+    - V-230373
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 emergency accounts must be automatically removed or disabled after the crisis is resolved or within 72 hours."
+  shell: |
+    /bin/false
+  register: RHEL_08_020270_result
+  changed_when: RHEL_08_020270_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000123-GPOS-00064
+    - SV-230374r627750_rule
+    - RHEL-08-020270
+    - V-230374
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "All RHEL 8 passwords must contain at least one special character."
+  shell: |
+    /bin/false
+  register: RHEL_08_020280_result
+  changed_when: RHEL_08_020280_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000266-GPOS-00101
+    - SV-230375r627750_rule
+    - RHEL-08-020280
+    - V-230375
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must prohibit the use of cached authentications after one day."
+  shell: |
+    /bin/false
+  register: RHEL_08_020290_result
+  changed_when: RHEL_08_020290_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000383-GPOS-00166
+    - SV-230376r627750_rule
+    - RHEL-08-020290
+    - V-230376
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must prevent the use of dictionary words for passwords."
+  shell: |
+    /bin/false
+  register: RHEL_08_020300_result
+  changed_when: RHEL_08_020300_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00225
+    - SV-230377r627750_rule
+    - RHEL-08-020300
+    - V-230377
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must enforce a delay of at least four seconds between logon prompts following a failed logon attempt."
+  shell: |
+    /bin/false
+  register: RHEL_08_020310_result
+  changed_when: RHEL_08_020310_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00226
+    - SV-230378r627750_rule
+    - RHEL-08-020310
+    - V-230378
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must not have unnecessary accounts."
+  shell: |
+    /bin/false
+  register: RHEL_08_020320_result
+  changed_when: RHEL_08_020320_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230379r627750_rule
+    - RHEL-08-020320
+    - V-230379
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must not allow accounts configured with blank or null passwords."
+  shell: |
+    /bin/false
+  register: RHEL_08_020330_result
+  changed_when: RHEL_08_020330_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230380r743993_rule
+    - RHEL-08-020330
+    - V-230380
+    - high
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must display the date and time of the last successful account logon upon logon."
+  shell: |
+    /bin/false
+  register: RHEL_08_020340_result
+  changed_when: RHEL_08_020340_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230381r627750_rule
+    - RHEL-08-020340
+    - V-230381
+    - low
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must display the date and time of the last successful account logon upon an SSH logon."
+  shell: |
+    /bin/false
+  register: RHEL_08_020350_result
+  changed_when: RHEL_08_020350_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230382r627750_rule
+    - RHEL-08-020350
+    - V-230382
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must define default permissions for all authenticated users in such a way that the user can only read and modify their own files."
+  shell: |
+    /bin/false
+  register: RHEL_08_020351_result
+  changed_when: RHEL_08_020351_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00228
+    - SV-230383r627750_rule
+    - RHEL-08-020351
+    - V-230383
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must set the umask value to 077 for all local interactive user accounts."
+  shell: |
+    /bin/false
+  register: RHEL_08_020352_result
+  changed_when: RHEL_08_020352_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00228
+    - SV-230384r627750_rule
+    - RHEL-08-020352
+    - V-230384
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must define default permissions for logon and non-logon shells."
+  shell: |
+    /bin/false
+  register: RHEL_08_020353_result
+  changed_when: RHEL_08_020353_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230385r627750_rule
+    - RHEL-08-020353
+    - V-230385
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 audit system must be configured to audit the execution of privileged functions and prevent all software from executing at higher privilege levels than users executing the software."
+  shell: |
+    /bin/false
+  register: RHEL_08_030000_result
+  changed_when: RHEL_08_030000_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000326-GPOS-00126
+    - SV-230386r627750_rule
+    - RHEL-08-030000
+    - V-230386
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Cron logging must be implemented in RHEL 8."
+  shell: |
+    /bin/false
+  register: RHEL_08_030010_result
+  changed_when: RHEL_08_030010_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230387r743996_rule
+    - RHEL-08-030010
+    - V-230387
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 System Administrator (SA) and Information System Security Officer (ISSO) (at a minimum) must be alerted of an audit processing failure event."
+  shell: |
+    /bin/false
+  register: RHEL_08_030020_result
+  changed_when: RHEL_08_030020_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000046-GPOS-00022
+    - SV-230388r627750_rule
+    - RHEL-08-030020
+    - V-230388
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 Information System Security Officer (ISSO) and System Administrator (SA) (at a minimum) must have mail aliases to be notified of an audit processing failure."
+  shell: |
+    /bin/false
+  register: RHEL_08_030030_result
+  changed_when: RHEL_08_030030_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000046-GPOS-00022
+    - SV-230389r627750_rule
+    - RHEL-08-030030
+    - V-230389
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 System must take appropriate action when an audit processing failure occurs."
+  shell: |
+    /bin/false
+  register: RHEL_08_030040_result
+  changed_when: RHEL_08_030040_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000047-GPOS-00023
+    - SV-230390r627750_rule
+    - RHEL-08-030040
+    - V-230390
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 System Administrator (SA) and Information System Security Officer (ISSO) (at a minimum) must be alerted when the audit storage volume is full."
+  shell: |
+    /bin/false
+  register: RHEL_08_030050_result
+  changed_when: RHEL_08_030050_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000047-GPOS-00023
+    - SV-230391r743998_rule
+    - RHEL-08-030050
+    - V-230391
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 audit system must take appropriate action when the audit storage volume is full."
+  shell: |
+    /bin/false
+  register: RHEL_08_030060_result
+  changed_when: RHEL_08_030060_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000047-GPOS-00023
+    - SV-230392r627750_rule
+    - RHEL-08-030060
+    - V-230392
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 audit system must audit local events."
+  shell: |
+    /bin/false
+  register: RHEL_08_030061_result
+  changed_when: RHEL_08_030061_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230393r627750_rule
+    - RHEL-08-030061
+    - V-230393
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must label all off-loaded audit logs before sending them to the central log server."
+  shell: |
+    /bin/false
+  register: RHEL_08_030062_result
+  changed_when: RHEL_08_030062_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000342-GPOS-00133
+    - SV-230394r627750_rule
+    - RHEL-08-030062
+    - V-230394
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must resolve audit information before writing to disk."
+  shell: |
+    /bin/false
+  register: RHEL_08_030063_result
+  changed_when: RHEL_08_030063_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230395r627750_rule
+    - RHEL-08-030063
+    - V-230395
+    - low
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 audit logs must have a mode of 0600 or less permissive to prevent unauthorized read access."
+  shell: |
+    /bin/false
+  register: RHEL_08_030070_result
+  changed_when: RHEL_08_030070_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000057-GPOS-00027
+    - SV-230396r627750_rule
+    - RHEL-08-030070
+    - V-230396
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 audit logs must be owned by root to prevent unauthorized read access."
+  shell: |
+    /bin/false
+  register: RHEL_08_030080_result
+  changed_when: RHEL_08_030080_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000057-GPOS-00027
+    - SV-230397r627750_rule
+    - RHEL-08-030080
+    - V-230397
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 audit logs must be group-owned by root to prevent unauthorized read access."
+  shell: |
+    /bin/false
+  register: RHEL_08_030090_result
+  changed_when: RHEL_08_030090_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000057-GPOS-00027
+    - SV-230398r627750_rule
+    - RHEL-08-030090
+    - V-230398
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 audit log directory must be owned by root to prevent unauthorized read access."
+  shell: |
+    /bin/false
+  register: RHEL_08_030100_result
+  changed_when: RHEL_08_030100_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000057-GPOS-00027
+    - SV-230399r627750_rule
+    - RHEL-08-030100
+    - V-230399
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 audit log directory must be group-owned by root to prevent unauthorized read access."
+  shell: |
+    /bin/false
+  register: RHEL_08_030110_result
+  changed_when: RHEL_08_030110_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000057-GPOS-00027
+    - SV-230400r627750_rule
+    - RHEL-08-030110
+    - V-230400
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 audit log directory must have a mode of 0700 or less permissive to prevent unauthorized read access."
+  shell: |
+    /bin/false
+  register: RHEL_08_030120_result
+  changed_when: RHEL_08_030120_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000057-GPOS-00027
+    - SV-230401r627750_rule
+    - RHEL-08-030120
+    - V-230401
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 audit system must protect auditing rules from unauthorized change."
+  shell: |
+    /bin/false
+  register: RHEL_08_030121_result
+  changed_when: RHEL_08_030121_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000057-GPOS-00027
+    - SV-230402r627750_rule
+    - RHEL-08-030121
+    - V-230402
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 audit system must protect logon UIDs from unauthorized change."
+  shell: |
+    /bin/false
+  register: RHEL_08_030122_result
+  changed_when: RHEL_08_030122_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000057-GPOS-00027
+    - SV-230403r627750_rule
+    - RHEL-08-030122
+    - V-230403
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/shadow."
+  shell: |
+    /bin/false
+  register: RHEL_08_030130_result
+  changed_when: RHEL_08_030130_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230404r627750_rule
+    - RHEL-08-030130
+    - V-230404
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/security/opasswd."
+  shell: |
+    /bin/false
+  register: RHEL_08_030140_result
+  changed_when: RHEL_08_030140_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230405r627750_rule
+    - RHEL-08-030140
+    - V-230405
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/passwd."
+  shell: |
+    /bin/false
+  register: RHEL_08_030150_result
+  changed_when: RHEL_08_030150_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230406r627750_rule
+    - RHEL-08-030150
+    - V-230406
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/gshadow."
+  shell: |
+    /bin/false
+  register: RHEL_08_030160_result
+  changed_when: RHEL_08_030160_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230407r627750_rule
+    - RHEL-08-030160
+    - V-230407
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/group."
+  shell: |
+    /bin/false
+  register: RHEL_08_030170_result
+  changed_when: RHEL_08_030170_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230408r627750_rule
+    - RHEL-08-030170
+    - V-230408
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/sudoers."
+  shell: |
+    /bin/false
+  register: RHEL_08_030171_result
+  changed_when: RHEL_08_030171_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230409r627750_rule
+    - RHEL-08-030171
+    - V-230409
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/sudoers.d/."
+  shell: |
+    /bin/false
+  register: RHEL_08_030172_result
+  changed_when: RHEL_08_030172_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230410r627750_rule
+    - RHEL-08-030172
+    - V-230410
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 audit package must be installed."
+  shell: |
+    /bin/false
+  register: RHEL_08_030180_result
+  changed_when: RHEL_08_030180_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230411r744000_rule
+    - RHEL-08-030180
+    - V-230411
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of the su command in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030190_result
+  changed_when: RHEL_08_030190_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230412r627750_rule
+    - RHEL-08-030190
+    - V-230412
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 audit system must be configured to audit any usage of the lremovexattr system call."
+  shell: |
+    /bin/false
+  register: RHEL_08_030200_result
+  changed_when: RHEL_08_030200_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230413r627750_rule
+    - RHEL-08-030200
+    - V-230413
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 audit system must be configured to audit any usage of the removexattr system call."
+  shell: |
+    /bin/false
+  register: RHEL_08_030210_result
+  changed_when: RHEL_08_030210_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230414r627750_rule
+    - RHEL-08-030210
+    - V-230414
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 audit system must be configured to audit any usage of the lsetxattr system call."
+  shell: |
+    /bin/false
+  register: RHEL_08_030220_result
+  changed_when: RHEL_08_030220_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230415r627750_rule
+    - RHEL-08-030220
+    - V-230415
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 audit system must be configured to audit any usage of the fsetxattr system call."
+  shell: |
+    /bin/false
+  register: RHEL_08_030230_result
+  changed_when: RHEL_08_030230_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230416r627750_rule
+    - RHEL-08-030230
+    - V-230416
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 audit system must be configured to audit any usage of the fremovexattr system call."
+  shell: |
+    /bin/false
+  register: RHEL_08_030240_result
+  changed_when: RHEL_08_030240_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230417r627750_rule
+    - RHEL-08-030240
+    - V-230417
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of the chage command in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030250_result
+  changed_when: RHEL_08_030250_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230418r627750_rule
+    - RHEL-08-030250
+    - V-230418
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of the chcon command in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030260_result
+  changed_when: RHEL_08_030260_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230419r627750_rule
+    - RHEL-08-030260
+    - V-230419
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 audit system must be configured to audit any usage of the setxattr system call."
+  shell: |
+    /bin/false
+  register: RHEL_08_030270_result
+  changed_when: RHEL_08_030270_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230420r627750_rule
+    - RHEL-08-030270
+    - V-230420
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of the ssh-agent in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030280_result
+  changed_when: RHEL_08_030280_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230421r627750_rule
+    - RHEL-08-030280
+    - V-230421
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of the passwd command in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030290_result
+  changed_when: RHEL_08_030290_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230422r627750_rule
+    - RHEL-08-030290
+    - V-230422
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of the mount command in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030300_result
+  changed_when: RHEL_08_030300_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230423r627750_rule
+    - RHEL-08-030300
+    - V-230423
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of the umount command in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030301_result
+  changed_when: RHEL_08_030301_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230424r627750_rule
+    - RHEL-08-030301
+    - V-230424
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of the mount syscall in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030302_result
+  changed_when: RHEL_08_030302_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230425r627750_rule
+    - RHEL-08-030302
+    - V-230425
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of the unix_update in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030310_result
+  changed_when: RHEL_08_030310_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230426r627750_rule
+    - RHEL-08-030310
+    - V-230426
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of postdrop in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030311_result
+  changed_when: RHEL_08_030311_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230427r627750_rule
+    - RHEL-08-030311
+    - V-230427
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of postqueue in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030312_result
+  changed_when: RHEL_08_030312_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230428r627750_rule
+    - RHEL-08-030312
+    - V-230428
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of semanage in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030313_result
+  changed_when: RHEL_08_030313_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230429r627750_rule
+    - RHEL-08-030313
+    - V-230429
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of setfiles in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030314_result
+  changed_when: RHEL_08_030314_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230430r627750_rule
+    - RHEL-08-030314
+    - V-230430
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of userhelper in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030315_result
+  changed_when: RHEL_08_030315_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230431r627750_rule
+    - RHEL-08-030315
+    - V-230431
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of setsebool in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030316_result
+  changed_when: RHEL_08_030316_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230432r627750_rule
+    - RHEL-08-030316
+    - V-230432
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of unix_chkpwd in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030317_result
+  changed_when: RHEL_08_030317_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230433r627750_rule
+    - RHEL-08-030317
+    - V-230433
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of the ssh-keysign in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030320_result
+  changed_when: RHEL_08_030320_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230434r744002_rule
+    - RHEL-08-030320
+    - V-230434
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of the setfacl command in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030330_result
+  changed_when: RHEL_08_030330_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230435r627750_rule
+    - RHEL-08-030330
+    - V-230435
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of the pam_timestamp_check command in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030340_result
+  changed_when: RHEL_08_030340_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230436r627750_rule
+    - RHEL-08-030340
+    - V-230436
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of the newgrp command in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030350_result
+  changed_when: RHEL_08_030350_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230437r627750_rule
+    - RHEL-08-030350
+    - V-230437
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of the init_module command in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030360_result
+  changed_when: RHEL_08_030360_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230438r627750_rule
+    - RHEL-08-030360
+    - V-230438
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of the rename command in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030361_result
+  changed_when: RHEL_08_030361_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230439r627750_rule
+    - RHEL-08-030361
+    - V-230439
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of the renameat command in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030362_result
+  changed_when: RHEL_08_030362_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230440r627750_rule
+    - RHEL-08-030362
+    - V-230440
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of the rmdir command in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030363_result
+  changed_when: RHEL_08_030363_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230441r627750_rule
+    - RHEL-08-030363
+    - V-230441
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of the unlink command in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030364_result
+  changed_when: RHEL_08_030364_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230442r627750_rule
+    - RHEL-08-030364
+    - V-230442
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of the unlinkat command in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030365_result
+  changed_when: RHEL_08_030365_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230443r627750_rule
+    - RHEL-08-030365
+    - V-230443
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of the gpasswd command in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030370_result
+  changed_when: RHEL_08_030370_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230444r627750_rule
+    - RHEL-08-030370
+    - V-230444
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of the finit_module command in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030380_result
+  changed_when: RHEL_08_030380_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230445r627750_rule
+    - RHEL-08-030380
+    - V-230445
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of the delete_module command in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030390_result
+  changed_when: RHEL_08_030390_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230446r627750_rule
+    - RHEL-08-030390
+    - V-230446
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of the crontab command in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030400_result
+  changed_when: RHEL_08_030400_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230447r627750_rule
+    - RHEL-08-030400
+    - V-230447
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of the chsh command in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030410_result
+  changed_when: RHEL_08_030410_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230448r627750_rule
+    - RHEL-08-030410
+    - V-230448
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of the truncate command in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030420_result
+  changed_when: RHEL_08_030420_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230449r627750_rule
+    - RHEL-08-030420
+    - V-230449
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of the openat system call in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030430_result
+  changed_when: RHEL_08_030430_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230450r627750_rule
+    - RHEL-08-030430
+    - V-230450
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of the open system call in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030440_result
+  changed_when: RHEL_08_030440_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230451r627750_rule
+    - RHEL-08-030440
+    - V-230451
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of the open_by_handle_at system call in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030450_result
+  changed_when: RHEL_08_030450_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230452r627750_rule
+    - RHEL-08-030450
+    - V-230452
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of the ftruncate command in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030460_result
+  changed_when: RHEL_08_030460_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230453r627750_rule
+    - RHEL-08-030460
+    - V-230453
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of the creat system call in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030470_result
+  changed_when: RHEL_08_030470_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230454r627750_rule
+    - RHEL-08-030470
+    - V-230454
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of the chown command in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030480_result
+  changed_when: RHEL_08_030480_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230455r627750_rule
+    - RHEL-08-030480
+    - V-230455
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of the chmod command in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030490_result
+  changed_when: RHEL_08_030490_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230456r627750_rule
+    - RHEL-08-030490
+    - V-230456
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of the lchown system call in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030500_result
+  changed_when: RHEL_08_030500_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230457r627750_rule
+    - RHEL-08-030500
+    - V-230457
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of the fchownat system call in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030510_result
+  changed_when: RHEL_08_030510_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230458r627750_rule
+    - RHEL-08-030510
+    - V-230458
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of the fchown system call in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030520_result
+  changed_when: RHEL_08_030520_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230459r627750_rule
+    - RHEL-08-030520
+    - V-230459
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of the fchmodat system call in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030530_result
+  changed_when: RHEL_08_030530_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230460r627750_rule
+    - RHEL-08-030530
+    - V-230460
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of the fchmod system call in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030540_result
+  changed_when: RHEL_08_030540_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230461r627750_rule
+    - RHEL-08-030540
+    - V-230461
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of the sudo command in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030550_result
+  changed_when: RHEL_08_030550_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230462r627750_rule
+    - RHEL-08-030550
+    - V-230462
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of the usermod command in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030560_result
+  changed_when: RHEL_08_030560_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230463r627750_rule
+    - RHEL-08-030560
+    - V-230463
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of the chacl command in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030570_result
+  changed_when: RHEL_08_030570_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230464r627750_rule
+    - RHEL-08-030570
+    - V-230464
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful uses of the kmod command in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030580_result
+  changed_when: RHEL_08_030580_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230465r627750_rule
+    - RHEL-08-030580
+    - V-230465
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful modifications to the faillock log file in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030590_result
+  changed_when: RHEL_08_030590_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230466r627750_rule
+    - RHEL-08-030590
+    - V-230466
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "Successful/unsuccessful modifications to the lastlog file in RHEL 8 must generate an audit record."
+  shell: |
+    /bin/false
+  register: RHEL_08_030600_result
+  changed_when: RHEL_08_030600_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230467r627750_rule
+    - RHEL-08-030600
+    - V-230467
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must enable auditing of processes that start prior to the audit daemon."
+  shell: |
+    /bin/false
+  register: RHEL_08_030601_result
+  changed_when: RHEL_08_030601_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230468r627750_rule
+    - RHEL-08-030601
+    - V-230468
+    - low
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must allocate an audit_backlog_limit of sufficient size to capture processes that start prior to the audit daemon."
+  shell: |
+    /bin/false
+  register: RHEL_08_030602_result
+  changed_when: RHEL_08_030602_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000341-GPOS-00132
+    - SV-230469r744004_rule
+    - RHEL-08-030602
+    - V-230469
+    - low
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must enable Linux audit logging for the USBGuard daemon."
+  shell: |
+    /bin/false
+  register: RHEL_08_030603_result
+  changed_when: RHEL_08_030603_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-230470r744006_rule
+    - RHEL-08-030603
+    - V-230470
+    - low
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must allow only the Information System Security Manager (ISSM) (or individuals or roles appointed by the ISSM) to select which auditable events are to be audited."
+  shell: |
+    /bin/false
+  register: RHEL_08_030610_result
+  changed_when: RHEL_08_030610_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000063-GPOS-00032
+    - SV-230471r627750_rule
+    - RHEL-08-030610
+    - V-230471
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 audit tools must have a mode of 0755 or less permissive."
+  shell: |
+    /bin/false
+  register: RHEL_08_030620_result
+  changed_when: RHEL_08_030620_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000256-GPOS-00097
+    - SV-230472r627750_rule
+    - RHEL-08-030620
+    - V-230472
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 audit tools must be owned by root."
+  shell: |
+    /bin/false
+  register: RHEL_08_030630_result
+  changed_when: RHEL_08_030630_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000256-GPOS-00097
+    - SV-230473r744008_rule
+    - RHEL-08-030630
+    - V-230473
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 audit tools must be group-owned by root."
+  shell: |
+    /bin/false
+  register: RHEL_08_030640_result
+  changed_when: RHEL_08_030640_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000256-GPOS-00097
+    - SV-230474r627750_rule
+    - RHEL-08-030640
+    - V-230474
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must use cryptographic mechanisms to protect the integrity of audit tools."
+  shell: |
+    /bin/false
+  register: RHEL_08_030650_result
+  changed_when: RHEL_08_030650_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000278-GPOS-00108
+    - SV-230475r627750_rule
+    - RHEL-08-030650
+    - V-230475
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must allocate audit record storage capacity to store at least one week of audit records, when audit records are not immediately sent to a central audit record storage facility."
+  shell: |
+    /bin/false
+  register: RHEL_08_030660_result
+  changed_when: RHEL_08_030660_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000341-GPOS-00132
+    - SV-230476r627750_rule
+    - RHEL-08-030660
+    - V-230476
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must have the packages required for offloading audit logs installed."
+  shell: |
+    /bin/false
+  register: RHEL_08_030670_result
+  changed_when: RHEL_08_030670_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230477r627750_rule
+    - RHEL-08-030670
+    - V-230477
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must have the packages required for encrypting offloaded audit logs installed."
+  shell: |
+    /bin/false
+  register: RHEL_08_030680_result
+  changed_when: RHEL_08_030680_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230478r744011_rule
+    - RHEL-08-030680
+    - V-230478
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 audit records must be off-loaded onto a different system or storage media from the system being audited."
+  shell: |
+    /bin/false
+  register: RHEL_08_030690_result
+  changed_when: RHEL_08_030690_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000342-GPOS-00133
+    - SV-230479r627750_rule
+    - RHEL-08-030690
+    - V-230479
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must take appropriate action when the internal event queue is full."
+  shell: |
+    /bin/false
+  register: RHEL_08_030700_result
+  changed_when: RHEL_08_030700_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000342-GPOS-00133
+    - SV-230480r627750_rule
+    - RHEL-08-030700
+    - V-230480
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must encrypt the transfer of audit records off-loaded onto a different system or media from the system being audited."
+  shell: |
+    /bin/false
+  register: RHEL_08_030710_result
+  changed_when: RHEL_08_030710_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000342-GPOS-00133
+    - SV-230481r627750_rule
+    - RHEL-08-030710
+    - V-230481
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must authenticate the remote logging server for off-loading audit logs."
+  shell: |
+    /bin/false
+  register: RHEL_08_030720_result
+  changed_when: RHEL_08_030720_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000342-GPOS-00133
+    - SV-230482r627750_rule
+    - RHEL-08-030720
+    - V-230482
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must take action when allocated audit record storage volume reaches 75 percent of the repository maximum audit record storage capacity."
+  shell: |
+    /bin/false
+  register: RHEL_08_030730_result
+  changed_when: RHEL_08_030730_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000343-GPOS-00134
+    - SV-230483r744014_rule
+    - RHEL-08-030730
+    - V-230483
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must securely compare internal information system clocks at least every 24 hours with a server synchronized to an authoritative time source, such as the United States Naval Observatory (USNO) time servers, or a time server designated for the appropriate DoD network (NIPRNet/SIPRNet), and/or the Global Positioning System (GPS)."
+  shell: |
+    /bin/false
+  register: RHEL_08_030740_result
+  changed_when: RHEL_08_030740_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000355-GPOS-00143
+    - SV-230484r627750_rule
+    - RHEL-08-030740
+    - V-230484
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must disable the chrony daemon from acting as a server."
+  shell: |
+    /bin/false
+  register: RHEL_08_030741_result
+  changed_when: RHEL_08_030741_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000095-GPOS-00049
+    - SV-230485r627750_rule
+    - RHEL-08-030741
+    - V-230485
+    - low
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must disable network management of the chrony daemon."
+  shell: |
+    /bin/false
+  register: RHEL_08_030742_result
+  changed_when: RHEL_08_030742_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000095-GPOS-00049
+    - SV-230486r627750_rule
+    - RHEL-08-030742
+    - V-230486
+    - low
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must not have the telnet-server package installed."
+  shell: |
+    /bin/false
+  register: RHEL_08_040000_result
+  changed_when: RHEL_08_040000_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000095-GPOS-00049
+    - SV-230487r627750_rule
+    - RHEL-08-040000
+    - V-230487
+    - high
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must not have any automated bug reporting tools installed."
+  shell: |
+    /bin/false
+  register: RHEL_08_040001_result
+  changed_when: RHEL_08_040001_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000095-GPOS-00049
+    - SV-230488r627750_rule
+    - RHEL-08-040001
+    - V-230488
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must not have the sendmail package installed."
+  shell: |
+    /bin/false
+  register: RHEL_08_040002_result
+  changed_when: RHEL_08_040002_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000095-GPOS-00049
+    - SV-230489r627750_rule
+    - RHEL-08-040002
+    - V-230489
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must enable mitigations against processor-based vulnerabilities."
+  shell: |
+    /bin/false
+  register: RHEL_08_040004_result
+  changed_when: RHEL_08_040004_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000095-GPOS-00049
+    - SV-230491r627750_rule
+    - RHEL-08-040004
+    - V-230491
+    - low
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must not have the rsh-server package installed."
+  shell: |
+    /bin/false
+  register: RHEL_08_040010_result
+  changed_when: RHEL_08_040010_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000095-GPOS-00049
+    - SV-230492r627750_rule
+    - RHEL-08-040010
+    - V-230492
+    - high
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must cover or disable the built-in or attached camera when not in use."
+  shell: |
+    /bin/false
+  register: RHEL_08_040020_result
+  changed_when: RHEL_08_040020_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000095-GPOS-00049
+    - SV-230493r627750_rule
+    - RHEL-08-040020
+    - V-230493
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must disable the asynchronous transfer mode (ATM) protocol."
+  shell: |
+    /bin/false
+  register: RHEL_08_040021_result
+  changed_when: RHEL_08_040021_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000095-GPOS-00049
+    - SV-230494r627750_rule
+    - RHEL-08-040021
+    - V-230494
+    - low
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must disable the controller area network (CAN) protocol."
+  shell: |
+    /bin/false
+  register: RHEL_08_040022_result
+  changed_when: RHEL_08_040022_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000095-GPOS-00049
+    - SV-230495r627750_rule
+    - RHEL-08-040022
+    - V-230495
+    - low
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must disable the stream control transmission protocol (SCTP)."
+  shell: |
+    /bin/false
+  register: RHEL_08_040023_result
+  changed_when: RHEL_08_040023_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000095-GPOS-00049
+    - SV-230496r744017_rule
+    - RHEL-08-040023
+    - V-230496
+    - low
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must disable the transparent inter-process communication (TIPC) protocol."
+  shell: |
+    /bin/false
+  register: RHEL_08_040024_result
+  changed_when: RHEL_08_040024_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000095-GPOS-00049
+    - SV-230497r627750_rule
+    - RHEL-08-040024
+    - V-230497
+    - low
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must disable mounting of cramfs."
+  shell: |
+    /bin/false
+  register: RHEL_08_040025_result
+  changed_when: RHEL_08_040025_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000095-GPOS-00049
+    - SV-230498r627750_rule
+    - RHEL-08-040025
+    - V-230498
+    - low
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must disable IEEE 1394 (FireWire) Support."
+  shell: |
+    /bin/false
+  register: RHEL_08_040026_result
+  changed_when: RHEL_08_040026_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000095-GPOS-00049
+    - SV-230499r627750_rule
+    - RHEL-08-040026
+    - V-230499
+    - low
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must be configured to prohibit or restrict the use of functions, ports, protocols, and/or services, as defined in the Ports, Protocols, and Services Management (PPSM) Category Assignments List (CAL) and vulnerability assessments."
+  shell: |
+    /bin/false
+  register: RHEL_08_040030_result
+  changed_when: RHEL_08_040030_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000096-GPOS-00050
+    - SV-230500r627750_rule
+    - RHEL-08-040030
+    - V-230500
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 file system automounter must be disabled unless required."
+  shell: |
+    /bin/false
+  register: RHEL_08_040070_result
+  changed_when: RHEL_08_040070_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000114-GPOS-00059
+    - SV-230502r627750_rule
+    - RHEL-08-040070
+    - V-230502
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must be configured to disable USB mass storage."
+  shell: |
+    /bin/false
+  register: RHEL_08_040080_result
+  changed_when: RHEL_08_040080_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000114-GPOS-00059
+    - SV-230503r627750_rule
+    - RHEL-08-040080
+    - V-230503
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "A RHEL 8 firewall must employ a deny-all, allow-by-exception policy for allowing connections to other systems."
+  shell: |
+    /bin/false
+  register: RHEL_08_040090_result
+  changed_when: RHEL_08_040090_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000297-GPOS-00115
+    - SV-230504r627750_rule
+    - RHEL-08-040090
+    - V-230504
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "A firewall must be installed on RHEL 8."
+  shell: |
+    /bin/false
+  register: RHEL_08_040100_result
+  changed_when: RHEL_08_040100_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000297-GPOS-00115
+    - SV-230505r744020_rule
+    - RHEL-08-040100
+    - V-230505
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 wireless network adapters must be disabled."
+  shell: |
+    /bin/false
+  register: RHEL_08_040110_result
+  changed_when: RHEL_08_040110_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000299-GPOS-00117
+    - SV-230506r627750_rule
+    - RHEL-08-040110
+    - V-230506
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 Bluetooth must be disabled."
+  shell: |
+    /bin/false
+  register: RHEL_08_040111_result
+  changed_when: RHEL_08_040111_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000300-GPOS-00118
+    - SV-230507r627750_rule
+    - RHEL-08-040111
+    - V-230507
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must mount /dev/shm with the nodev option."
+  shell: |
+    /bin/false
+  register: RHEL_08_040120_result
+  changed_when: RHEL_08_040120_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000368-GPOS-00154
+    - SV-230508r627750_rule
+    - RHEL-08-040120
+    - V-230508
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must mount /dev/shm with the nosuid option."
+  shell: |
+    /bin/false
+  register: RHEL_08_040121_result
+  changed_when: RHEL_08_040121_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000368-GPOS-00154
+    - SV-230509r627750_rule
+    - RHEL-08-040121
+    - V-230509
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must mount /dev/shm with the noexec option."
+  shell: |
+    /bin/false
+  register: RHEL_08_040122_result
+  changed_when: RHEL_08_040122_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000368-GPOS-00154
+    - SV-230510r627750_rule
+    - RHEL-08-040122
+    - V-230510
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must mount /tmp with the nodev option."
+  shell: |
+    /bin/false
+  register: RHEL_08_040123_result
+  changed_when: RHEL_08_040123_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000368-GPOS-00154
+    - SV-230511r627750_rule
+    - RHEL-08-040123
+    - V-230511
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must mount /tmp with the nosuid option."
+  shell: |
+    /bin/false
+  register: RHEL_08_040124_result
+  changed_when: RHEL_08_040124_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000368-GPOS-00154
+    - SV-230512r627750_rule
+    - RHEL-08-040124
+    - V-230512
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must mount /tmp with the noexec option."
+  shell: |
+    /bin/false
+  register: RHEL_08_040125_result
+  changed_when: RHEL_08_040125_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000368-GPOS-00154
+    - SV-230513r627750_rule
+    - RHEL-08-040125
+    - V-230513
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must mount /var/log with the nodev option."
+  shell: |
+    /bin/false
+  register: RHEL_08_040126_result
+  changed_when: RHEL_08_040126_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000368-GPOS-00154
+    - SV-230514r627750_rule
+    - RHEL-08-040126
+    - V-230514
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must mount /var/log with the nosuid option."
+  shell: |
+    /bin/false
+  register: RHEL_08_040127_result
+  changed_when: RHEL_08_040127_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000368-GPOS-00154
+    - SV-230515r627750_rule
+    - RHEL-08-040127
+    - V-230515
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must mount /var/log with the noexec option."
+  shell: |
+    /bin/false
+  register: RHEL_08_040128_result
+  changed_when: RHEL_08_040128_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000368-GPOS-00154
+    - SV-230516r627750_rule
+    - RHEL-08-040128
+    - V-230516
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must mount /var/log/audit with the nodev option."
+  shell: |
+    /bin/false
+  register: RHEL_08_040129_result
+  changed_when: RHEL_08_040129_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000368-GPOS-00154
+    - SV-230517r627750_rule
+    - RHEL-08-040129
+    - V-230517
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must mount /var/log/audit with the nosuid option."
+  shell: |
+    /bin/false
+  register: RHEL_08_040130_result
+  changed_when: RHEL_08_040130_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000368-GPOS-00154
+    - SV-230518r627750_rule
+    - RHEL-08-040130
+    - V-230518
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must mount /var/log/audit with the noexec option."
+  shell: |
+    /bin/false
+  register: RHEL_08_040131_result
+  changed_when: RHEL_08_040131_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000368-GPOS-00154
+    - SV-230519r627750_rule
+    - RHEL-08-040131
+    - V-230519
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must mount /var/tmp with the nodev option."
+  shell: |
+    /bin/false
+  register: RHEL_08_040132_result
+  changed_when: RHEL_08_040132_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000368-GPOS-00154
+    - SV-230520r627750_rule
+    - RHEL-08-040132
+    - V-230520
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must mount /var/tmp with the nosuid option."
+  shell: |
+    /bin/false
+  register: RHEL_08_040133_result
+  changed_when: RHEL_08_040133_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000368-GPOS-00154
+    - SV-230521r627750_rule
+    - RHEL-08-040133
+    - V-230521
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must mount /var/tmp with the noexec option."
+  shell: |
+    /bin/false
+  register: RHEL_08_040134_result
+  changed_when: RHEL_08_040134_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000368-GPOS-00154
+    - SV-230522r627750_rule
+    - RHEL-08-040134
+    - V-230522
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 fapolicy module must be installed."
+  shell: |
+    /bin/false
+  register: RHEL_08_040135_result
+  changed_when: RHEL_08_040135_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000368-GPOS-00154
+    - SV-230523r744023_rule
+    - RHEL-08-040135
+    - V-230523
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must block unauthorized peripherals before establishing a connection."
+  shell: |
+    /bin/false
+  register: RHEL_08_040140_result
+  changed_when: RHEL_08_040140_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000378-GPOS-00163
+    - SV-230524r744026_rule
+    - RHEL-08-040140
+    - V-230524
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "A firewall must be able to protect against or limit the effects of Denial of Service (DoS) attacks by ensuring RHEL 8 can implement rate-limiting measures on impacted network interfaces."
+  shell: |
+    /bin/false
+  register: RHEL_08_040150_result
+  changed_when: RHEL_08_040150_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000420-GPOS-00186
+    - SV-230525r744029_rule
+    - RHEL-08-040150
+    - V-230525
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "All RHEL 8 networked systems must have and implement SSH to protect the confidentiality and integrity of transmitted and received information, as well as information during preparation for transmission."
+  shell: |
+    /bin/false
+  register: RHEL_08_040160_result
+  changed_when: RHEL_08_040160_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000423-GPOS-00187
+    - SV-230526r744032_rule
+    - RHEL-08-040160
+    - V-230526
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must force a frequent session key renegotiation for SSH connections to the server."
+  shell: |
+    /bin/false
+  register: RHEL_08_040161_result
+  changed_when: RHEL_08_040161_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000033-GPOS-00014
+    - SV-230527r627750_rule
+    - RHEL-08-040161
+    - V-230527
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The x86 Ctrl-Alt-Delete key sequence must be disabled on RHEL 8."
+  shell: |
+    /bin/false
+  register: RHEL_08_040170_result
+  changed_when: RHEL_08_040170_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230529r627750_rule
+    - RHEL-08-040170
+    - V-230529
+    - high
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The x86 Ctrl-Alt-Delete key sequence in RHEL 8 must be disabled if a graphical user interface is installed."
+  shell: |
+    /bin/false
+  register: RHEL_08_040171_result
+  changed_when: RHEL_08_040171_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230530r646883_rule
+    - RHEL-08-040171
+    - V-230530
+    - high
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The systemd Ctrl-Alt-Delete burst key sequence in RHEL 8 must be disabled."
+  shell: |
+    /bin/false
+  register: RHEL_08_040172_result
+  changed_when: RHEL_08_040172_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230531r627750_rule
+    - RHEL-08-040172
+    - V-230531
+    - high
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The debug-shell systemd service must be disabled on RHEL 8."
+  shell: |
+    /bin/false
+  register: RHEL_08_040180_result
+  changed_when: RHEL_08_040180_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230532r627750_rule
+    - RHEL-08-040180
+    - V-230532
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The Trivial File Transfer Protocol (TFTP) server package must not be installed if not required for RHEL 8 operational support."
+  shell: |
+    /bin/false
+  register: RHEL_08_040190_result
+  changed_when: RHEL_08_040190_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230533r627750_rule
+    - RHEL-08-040190
+    - V-230533
+    - high
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The root account must be the only account having unrestricted access to the RHEL 8 system."
+  shell: |
+    /bin/false
+  register: RHEL_08_040200_result
+  changed_when: RHEL_08_040200_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230534r627750_rule
+    - RHEL-08-040200
+    - V-230534
+    - high
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must prevent IPv6 Internet Control Message Protocol (ICMP) redirect messages from being accepted."
+  shell: |
+    /bin/false
+  register: RHEL_08_040210_result
+  changed_when: RHEL_08_040210_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230535r744035_rule
+    - RHEL-08-040210
+    - V-230535
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must not send Internet Control Message Protocol (ICMP) redirects."
+  shell: |
+    /bin/false
+  register: RHEL_08_040220_result
+  changed_when: RHEL_08_040220_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230536r744037_rule
+    - RHEL-08-040220
+    - V-230536
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must not respond to Internet Control Message Protocol (ICMP) echoes sent to a broadcast address."
+  shell: |
+    /bin/false
+  register: RHEL_08_040230_result
+  changed_when: RHEL_08_040230_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230537r744039_rule
+    - RHEL-08-040230
+    - V-230537
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must not forward IPv6 source-routed packets."
+  shell: |
+    /bin/false
+  register: RHEL_08_040240_result
+  changed_when: RHEL_08_040240_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230538r744042_rule
+    - RHEL-08-040240
+    - V-230538
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must not forward IPv6 source-routed packets by default."
+  shell: |
+    /bin/false
+  register: RHEL_08_040250_result
+  changed_when: RHEL_08_040250_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230539r744045_rule
+    - RHEL-08-040250
+    - V-230539
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must not be performing packet forwarding unless the system is a router."
+  shell: |
+    /bin/false
+  register: RHEL_08_040260_result
+  changed_when: RHEL_08_040260_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230540r627750_rule
+    - RHEL-08-040260
+    - V-230540
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must not accept router advertisements on all IPv6 interfaces."
+  shell: |
+    /bin/false
+  register: RHEL_08_040261_result
+  changed_when: RHEL_08_040261_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230541r627750_rule
+    - RHEL-08-040261
+    - V-230541
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must not accept router advertisements on all IPv6 interfaces by default."
+  shell: |
+    /bin/false
+  register: RHEL_08_040262_result
+  changed_when: RHEL_08_040262_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230542r627750_rule
+    - RHEL-08-040262
+    - V-230542
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must not allow interfaces to perform Internet Control Message Protocol (ICMP) redirects by default."
+  shell: |
+    /bin/false
+  register: RHEL_08_040270_result
+  changed_when: RHEL_08_040270_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230543r744047_rule
+    - RHEL-08-040270
+    - V-230543
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must ignore IPv6 Internet Control Message Protocol (ICMP) redirect messages."
+  shell: |
+    /bin/false
+  register: RHEL_08_040280_result
+  changed_when: RHEL_08_040280_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230544r744050_rule
+    - RHEL-08-040280
+    - V-230544
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must disable access to network bpf syscall from unprivileged processes."
+  shell: |
+    /bin/false
+  register: RHEL_08_040281_result
+  changed_when: RHEL_08_040281_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230545r627750_rule
+    - RHEL-08-040281
+    - V-230545
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must restrict usage of ptrace to descendant  processes."
+  shell: |
+    /bin/false
+  register: RHEL_08_040282_result
+  changed_when: RHEL_08_040282_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230546r627750_rule
+    - RHEL-08-040282
+    - V-230546
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must restrict exposed kernel pointer addresses access."
+  shell: |
+    /bin/false
+  register: RHEL_08_040283_result
+  changed_when: RHEL_08_040283_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230547r627750_rule
+    - RHEL-08-040283
+    - V-230547
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must disable the use of user namespaces."
+  shell: |
+    /bin/false
+  register: RHEL_08_040284_result
+  changed_when: RHEL_08_040284_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230548r627750_rule
+    - RHEL-08-040284
+    - V-230548
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must use reverse path filtering on all IPv4 interfaces."
+  shell: |
+    /bin/false
+  register: RHEL_08_040285_result
+  changed_when: RHEL_08_040285_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230549r627750_rule
+    - RHEL-08-040285
+    - V-230549
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must be configured to prevent unrestricted mail relaying."
+  shell: |
+    /bin/false
+  register: RHEL_08_040290_result
+  changed_when: RHEL_08_040290_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230550r627750_rule
+    - RHEL-08-040290
+    - V-230550
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 file integrity tool must be configured to verify extended attributes."
+  shell: |
+    /bin/false
+  register: RHEL_08_040300_result
+  changed_when: RHEL_08_040300_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230551r627750_rule
+    - RHEL-08-040300
+    - V-230551
+    - low
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 file integrity tool must be configured to verify Access Control Lists (ACLs)."
+  shell: |
+    /bin/false
+  register: RHEL_08_040310_result
+  changed_when: RHEL_08_040310_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230552r627750_rule
+    - RHEL-08-040310
+    - V-230552
+    - low
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The graphical display manager must not be installed on RHEL 8 unless approved."
+  shell: |
+    /bin/false
+  register: RHEL_08_040320_result
+  changed_when: RHEL_08_040320_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230553r646886_rule
+    - RHEL-08-040320
+    - V-230553
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 network interfaces must not be in promiscuous mode."
+  shell: |
+    /bin/false
+  register: RHEL_08_040330_result
+  changed_when: RHEL_08_040330_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230554r627750_rule
+    - RHEL-08-040330
+    - V-230554
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 remote X connections for interactive users must be disabled unless to fulfill documented and validated mission requirements."
+  shell: |
+    /bin/false
+  register: RHEL_08_040340_result
+  changed_when: RHEL_08_040340_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230555r627750_rule
+    - RHEL-08-040340
+    - V-230555
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 SSH daemon must prevent remote hosts from connecting to the proxy display."
+  shell: |
+    /bin/false
+  register: RHEL_08_040341_result
+  changed_when: RHEL_08_040341_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230556r627750_rule
+    - RHEL-08-040341
+    - V-230556
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "If the Trivial File Transfer Protocol (TFTP) server is required, the RHEL 8 TFTP daemon must be configured to operate in secure mode."
+  shell: |
+    /bin/false
+  register: RHEL_08_040350_result
+  changed_when: RHEL_08_040350_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230557r627750_rule
+    - RHEL-08-040350
+    - V-230557
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "A File Transfer Protocol (FTP) server package must not be installed unless mission essential on RHEL 8."
+  shell: |
+    /bin/false
+  register: RHEL_08_040360_result
+  changed_when: RHEL_08_040360_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230558r627750_rule
+    - RHEL-08-040360
+    - V-230558
+    - high
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The gssproxy package must not be installed unless mission essential on RHEL 8."
+  shell: |
+    /bin/false
+  register: RHEL_08_040370_result
+  changed_when: RHEL_08_040370_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230559r646887_rule
+    - RHEL-08-040370
+    - V-230559
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The iprutils package must not be installed unless mission essential on RHEL 8."
+  shell: |
+    /bin/false
+  register: RHEL_08_040380_result
+  changed_when: RHEL_08_040380_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230560r627750_rule
+    - RHEL-08-040380
+    - V-230560
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The tuned package must not be installed unless mission essential on RHEL 8."
+  shell: |
+    /bin/false
+  register: RHEL_08_040390_result
+  changed_when: RHEL_08_040390_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-230561r627750_rule
+    - RHEL-08-040390
+    - V-230561
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The krb5-server package must not be installed on RHEL 8."
+  shell: |
+    /bin/false
+  register: RHEL_08_010163_result
+  changed_when: RHEL_08_010163_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000120-GPOS-00061
+    - SV-237640r646890_rule
+    - RHEL-08-010163
+    - V-237640
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must restrict privilege elevation to authorized personnel."
+  shell: |
+    /bin/false
+  register: RHEL_08_010382_result
+  changed_when: RHEL_08_010382_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-237641r646893_rule
+    - RHEL-08-010382
+    - V-237641
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must use the invoking user's password for privilege escalation when using 'sudo'."
+  shell: |
+    /bin/false
+  register: RHEL_08_010383_result
+  changed_when: RHEL_08_010383_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-237642r646896_rule
+    - RHEL-08-010383
+    - V-237642
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must require re-authentication when using the 'sudo' command."
+  shell: |
+    /bin/false
+  register: RHEL_08_010384_result
+  changed_when: RHEL_08_010384_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000373-GPOS-00156
+    - SV-237643r646899_rule
+    - RHEL-08-010384
+    - V-237643
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must display a banner before granting local or remote access to the system via a graphical user logon."
+  shell: |
+    /bin/false
+  register: RHEL_08_010049_result
+  changed_when: RHEL_08_010049_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000023-GPOS-00006
+    - SV-244519r743806_rule
+    - RHEL-08-010049
+    - V-244519
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 system-auth file must be configured to use a sufficient number of hashing rounds."
+  shell: |
+    /bin/false
+  register: RHEL_08_010131_result
+  changed_when: RHEL_08_010131_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000073-GPOS-00041
+    - SV-244520r743809_rule
+    - RHEL-08-010131
+    - V-244520
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 operating systems booted with United Extensible Firmware Interface (UEFI) must require a unique superusers name upon booting into single-user mode and maintenance."
+  shell: |
+    /bin/false
+  register: RHEL_08_010141_result
+  changed_when: RHEL_08_010141_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000080-GPOS-00048
+    - SV-244521r743812_rule
+    - RHEL-08-010141
+    - V-244521
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 operating systems booted with a BIOS must require  a unique superusers name upon booting into single-user and maintenance modes."
+  shell: |
+    /bin/false
+  register: RHEL_08_010149_result
+  changed_when: RHEL_08_010149_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000080-GPOS-00048
+    - SV-244522r743815_rule
+    - RHEL-08-010149
+    - V-244522
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 operating systems must require authentication upon booting into emergency mode."
+  shell: |
+    /bin/false
+  register: RHEL_08_010152_result
+  changed_when: RHEL_08_010152_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000080-GPOS-00048
+    - SV-244523r743818_rule
+    - RHEL-08-010152
+    - V-244523
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 pam_unix.so module must be configured in the system-auth file to use a FIPS 140-2 approved cryptographic hashing algorithm for system authentication."
+  shell: |
+    /bin/false
+  register: RHEL_08_010159_result
+  changed_when: RHEL_08_010159_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000120-GPOS-00061
+    - SV-244524r743821_rule
+    - RHEL-08-010159
+    - V-244524
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 SSH daemon must be configured with a timeout interval."
+  shell: |
+    /bin/false
+  register: RHEL_08_010201_result
+  changed_when: RHEL_08_010201_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000163-GPOS-00072
+    - SV-244525r743824_rule
+    - RHEL-08-010201
+    - V-244525
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 SSH daemon must be configured to use system-wide crypto policies."
+  shell: |
+    /bin/false
+  register: RHEL_08_010287_result
+  changed_when: RHEL_08_010287_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000250-GPOS-00093
+    - SV-244526r743827_rule
+    - RHEL-08-010287
+    - V-244526
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must have the packages required to use the hardware random number generator entropy gatherer service."
+  shell: |
+    /bin/false
+  register: RHEL_08_010472_result
+  changed_when: RHEL_08_010472_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-244527r743830_rule
+    - RHEL-08-010472
+    - V-244527
+    - low
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 SSH daemon must not allow GSSAPI authentication, except to fulfill documented and validated mission requirements."
+  shell: |
+    /bin/false
+  register: RHEL_08_010522_result
+  changed_when: RHEL_08_010522_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-244528r743833_rule
+    - RHEL-08-010522
+    - V-244528
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must use a separate file system for /var/tmp."
+  shell: |
+    /bin/false
+  register: RHEL_08_010544_result
+  changed_when: RHEL_08_010544_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-244529r743836_rule
+    - RHEL-08-010544
+    - V-244529
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must prevent files with the setuid and setgid bit set from being executed on the /boot/efi directory."
+  shell: |
+    /bin/false
+  register: RHEL_08_010572_result
+  changed_when: RHEL_08_010572_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-244530r743839_rule
+    - RHEL-08-010572
+    - V-244530
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "All RHEL 8 local interactive user home directory files must have mode 0750 or less permissive."
+  shell: |
+    /bin/false
+  register: RHEL_08_010731_result
+  changed_when: RHEL_08_010731_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-244531r743842_rule
+    - RHEL-08-010731
+    - V-244531
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must be configured so that all files and directories contained in local interactive user home directories are group-owned by a group of which the home directory owner is a member."
+  shell: |
+    /bin/false
+  register: RHEL_08_010741_result
+  changed_when: RHEL_08_010741_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-244532r743845_rule
+    - RHEL-08-010741
+    - V-244532
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must configure the use of the pam_faillock.so module in the /etc/pam.d/system-auth file."
+  shell: |
+    /bin/false
+  register: RHEL_08_020025_result
+  changed_when: RHEL_08_020025_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000021-GPOS-00005
+    - SV-244533r743848_rule
+    - RHEL-08-020025
+    - V-244533
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must configure the use of the pam_faillock.so module in the /etc/pam.d/password-auth file."
+  shell: |
+    /bin/false
+  register: RHEL_08_020026_result
+  changed_when: RHEL_08_020026_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000021-GPOS-00005
+    - SV-244534r743851_rule
+    - RHEL-08-020026
+    - V-244534
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must initiate a session lock for graphical user interfaces when the screensaver is activated."
+  shell: |
+    /bin/false
+  register: RHEL_08_020031_result
+  changed_when: RHEL_08_020031_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000029-GPOS-00010
+    - SV-244535r743854_rule
+    - RHEL-08-020031
+    - V-244535
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must disable the user list at logon for graphical user interfaces."
+  shell: |
+    /bin/false
+  register: RHEL_08_020032_result
+  changed_when: RHEL_08_020032_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-244536r743857_rule
+    - RHEL-08-020032
+    - V-244536
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must have the tmux package installed."
+  shell: |
+    /bin/false
+  register: RHEL_08_020039_result
+  changed_when: RHEL_08_020039_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000028-GPOS-00009
+    - SV-244537r743860_rule
+    - RHEL-08-020039
+    - V-244537
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must prevent a user from overriding the session idle-delay setting for the graphical user interface."
+  shell: |
+    /bin/false
+  register: RHEL_08_020081_result
+  changed_when: RHEL_08_020081_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000029-GPOS-00010
+    - SV-244538r743863_rule
+    - RHEL-08-020081
+    - V-244538
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must prevent a user from overriding the screensaver lock-enabled setting for the graphical user interface."
+  shell: |
+    /bin/false
+  register: RHEL_08_020082_result
+  changed_when: RHEL_08_020082_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000029-GPOS-00010
+    - SV-244539r743866_rule
+    - RHEL-08-020082
+    - V-244539
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must not allow blank or null passwords in the system-auth file."
+  shell: |
+    /bin/false
+  register: RHEL_08_020331_result
+  changed_when: RHEL_08_020331_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-244540r743869_rule
+    - RHEL-08-020331
+    - V-244540
+    - high
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must not allow blank or null passwords in the password-auth file."
+  shell: |
+    /bin/false
+  register: RHEL_08_020332_result
+  changed_when: RHEL_08_020332_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-244541r743872_rule
+    - RHEL-08-020332
+    - V-244541
+    - high
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 audit records must contain information to establish what type of events occurred, the source of events, where events occurred, and the outcome of events."
+  shell: |
+    /bin/false
+  register: RHEL_08_030181_result
+  changed_when: RHEL_08_030181_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000062-GPOS-00031
+    - SV-244542r743875_rule
+    - RHEL-08-030181
+    - V-244542
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must notify the System Administrator (SA) and Information System Security Officer (ISSO) (at a minimum) when allocated audit record storage volume 75 percent utilization."
+  shell: |
+    /bin/false
+  register: RHEL_08_030731_result
+  changed_when: RHEL_08_030731_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000343-GPOS-00134
+    - SV-244543r743878_rule
+    - RHEL-08-030731
+    - V-244543
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "A firewall must be active on RHEL 8."
+  shell: |
+    /bin/false
+  register: RHEL_08_040101_result
+  changed_when: RHEL_08_040101_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000297-GPOS-00115
+    - SV-244544r743881_rule
+    - RHEL-08-040101
+    - V-244544
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 fapolicy module must be enabled."
+  shell: |
+    /bin/false
+  register: RHEL_08_040136_result
+  changed_when: RHEL_08_040136_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000368-GPOS-00154
+    - SV-244545r743884_rule
+    - RHEL-08-040136
+    - V-244545
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 fapolicy module must be configured to employ a deny-all, permit-by-exception policy to allow the execution of authorized software programs."
+  shell: |
+    /bin/false
+  register: RHEL_08_040137_result
+  changed_when: RHEL_08_040137_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000368-GPOS-00154
+    - SV-244546r743887_rule
+    - RHEL-08-040137
+    - V-244546
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must have the USBGuard installed."
+  shell: |
+    /bin/false
+  register: RHEL_08_040139_result
+  changed_when: RHEL_08_040139_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000378-GPOS-00163
+    - SV-244547r743890_rule
+    - RHEL-08-040139
+    - V-244547
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must enable the USBGuard."
+  shell: |
+    /bin/false
+  register: RHEL_08_040141_result
+  changed_when: RHEL_08_040141_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000378-GPOS-00163
+    - SV-244548r743893_rule
+    - RHEL-08-040141
+    - V-244548
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "All RHEL 8 networked systems must have SSH installed."
+  shell: |
+    /bin/false
+  register: RHEL_08_040159_result
+  changed_when: RHEL_08_040159_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000423-GPOS-00187
+    - SV-244549r743896_rule
+    - RHEL-08-040159
+    - V-244549
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must prevent IPv4 Internet Control Message Protocol (ICMP) redirect messages from being accepted."
+  shell: |
+    /bin/false
+  register: RHEL_08_040209_result
+  changed_when: RHEL_08_040209_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-244550r743899_rule
+    - RHEL-08-040209
+    - V-244550
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must not forward IPv4 source-routed packets."
+  shell: |
+    /bin/false
+  register: RHEL_08_040239_result
+  changed_when: RHEL_08_040239_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-244551r743902_rule
+    - RHEL-08-040239
+    - V-244551
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must not forward IPv4 source-routed packets by default."
+  shell: |
+    /bin/false
+  register: RHEL_08_040249_result
+  changed_when: RHEL_08_040249_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-244552r743905_rule
+    - RHEL-08-040249
+    - V-244552
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must ignore IPv4 Internet Control Message Protocol (ICMP) redirect messages."
+  shell: |
+    /bin/false
+  register: RHEL_08_040279_result
+  changed_when: RHEL_08_040279_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-244553r743908_rule
+    - RHEL-08-040279
+    - V-244553
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "RHEL 8 must enable hardening for the Berkeley Packet Filter Just-in-time compiler."
+  shell: |
+    /bin/false
+  register: RHEL_08_040286_result
+  changed_when: RHEL_08_040286_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000480-GPOS-00227
+    - SV-244554r743911_rule
+    - RHEL-08-040286
+    - V-244554
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
+
+- name: "The RHEL 8 operating system must implement the Endpoint Security for Linux Threat Prevention tool."
+  shell: |
+    /bin/false
+  register: RHEL_08_010001_result
+  changed_when: RHEL_08_010001_result.rc|int > 0
+  failed_when: false
+  check_mode: false
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000191-GPOS-00080
+    - SV-245540r754730_rule
+    - RHEL-08-010001
+    - V-245540
+    - medium
+    - checkonly
+    - shell
+    - notimplemented
