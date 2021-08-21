@@ -17,12 +17,11 @@
     - shell
 
 - name: "RHEL 8 vendor packaged system security patches and updates must be installed and up to date."
-  shell: |
-    /bin/false
-  register: RHEL_08_010010_result
-  changed_when: RHEL_08_010010_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  dnf:
+    name: "*"
+    security: true
+    state: latest
+    update_cache: true
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000480-GPOS-00227
@@ -30,9 +29,7 @@
     - RHEL-08-010010
     - V-230222
     - medium
-    - checkonly
-    - shell
-    - notimplemented
+    - dnf
 
 - name: "RHEL 8 must implement NIST FIPS-validated cryptography for the following: to provision digital signatures, to generate cryptographic hashes, and to protect data requiring data-at-rest protections in accordance with applicable federal laws, Executive Orders, directives, policies, regulations, and standards."
   shell: |
