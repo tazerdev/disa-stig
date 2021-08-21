@@ -1,6 +1,6 @@
 ---
 - name: "RHEL 8 must be a vendor-supported release."
-  shell: |
+  ansible.builtin.shell: |
     /usr/bin/grep -P "^Red Hat Enterprise Linux release 8\.[1-9] \(Ootpa\)" /etc/redhat-release
   register: RHEL_08_010000_result
   changed_when: RHEL_08_010000_result.stdout_lines|int > 0
@@ -17,7 +17,7 @@
     - shell
 
 - name: "RHEL 8 vendor packaged system security patches and updates must be installed and up to date."
-  dnf:
+  ansible.builtin.dnf:
     name: "*"
     security: true
     state: latest
