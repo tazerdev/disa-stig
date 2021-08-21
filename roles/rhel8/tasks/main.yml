@@ -1,9 +1,9 @@
 ---
 - name: "RHEL 8 must be a vendor-supported release."
   shell: |
-    /bin/false
+    /usr/bin/grep -P "^Red Hat Enterprise Linux release 8\.[1-9] \(Ootpa\)" /etc/redhat-release
   register: RHEL_08_010000_result
-  changed_when: RHEL_08_010000_result.rc|int > 0
+  changed_when: RHEL_08_010000_result.stdout_lines|int > 0
   failed_when: false
   check_mode: false
   tags:
@@ -15,7 +15,6 @@
     - high
     - checkonly
     - shell
-    - notimplemented
 
 - name: "RHEL 8 vendor packaged system security patches and updates must be installed and up to date."
   shell: |
