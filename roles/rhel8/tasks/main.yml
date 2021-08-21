@@ -16,6 +16,20 @@
     - checkonly
     - shell
 
+- name: "The RHEL 8 operating system must implement the Endpoint Security for Linux Threat Prevention tool."
+  ansible.builtin.dnf:
+    name: mcafeetp
+    state: latest
+    update_cache: true
+  notify: "restart mfetpd"
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000191-GPOS-00080
+    - SV-245540r754730_rule
+    - RHEL-08-010001
+    - V-245540
+    - medium
+
 - name: "RHEL 8 vendor packaged system security patches and updates must be installed and up to date."
   ansible.builtin.dnf:
     name: "*"
@@ -65,15 +79,13 @@
     - medium
     - checkonly
     - shell
-    - notimplemented
 
 - name: "RHEL 8 must display the Standard Mandatory DoD Notice and Consent Banner before granting local or remote access to the system via a ssh logon."
-  shell: |
-    /bin/false
-  register: RHEL_08_010040_result
-  changed_when: RHEL_08_010040_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  ansible.builtin.lineinfile:
+    dest: /etc/ssh/sshd_config
+    regexp: "^(?=[\s]*+[^#])[^#]*Banner"
+    line: Banner /etc/issue
+  notify: "restart sshd"
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000023-GPOS-00006
@@ -81,17 +93,32 @@
     - RHEL-08-010040
     - V-230225
     - medium
+
+- name: "RHEL 8 must display a banner before granting local or remote access to the system via a graphical user logon."
+  ansible.builtin.ini_file:
+    path: /etc/dconf/db/local.d/01-banner-message
+    option: banner-message-enable
+    value: "true"
+    section: "org/gnome/login-screen"
+  when: gnome|bool
+  tags:
+    - rhel8-disa-stig-v1r3
+    - SRG-OS-000023-GPOS-00006
+    - SV-244519r743806_rule
+    - RHEL-08-010049
+    - V-244519
+    - medium
     - checkonly
     - shell
     - notimplemented
 
 - name: "RHEL 8 must display the Standard Mandatory DoD Notice and Consent Banner before granting local or remote access to the system via a graphical user logon."
-  shell: |
-    /bin/false
-  register: RHEL_08_010050_result
-  changed_when: RHEL_08_010050_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  ansible.builtin.ini_file:
+    path: /etc/dconf/db/local.d/01-banner-message
+    option: banner-message-text
+    value: "{{ banner_message }}"
+    section: "org/gnome/login-screen"
+  when: gnome|bool
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000023-GPOS-00006
@@ -99,17 +126,12 @@
     - RHEL-08-010050
     - V-230226
     - medium
-    - checkonly
-    - shell
-    - notimplemented
 
 - name: "RHEL 8 must display the Standard Mandatory DoD Notice and Consent Banner before granting local or remote access to the system via a command line user logon."
-  shell: |
-    /bin/false
-  register: RHEL_08_010060_result
-  changed_when: RHEL_08_010060_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  ansible.builtin.copy:
+    src: etc/issue
+    dest: /etc/issue
+    mode: 0644
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000023-GPOS-00006
