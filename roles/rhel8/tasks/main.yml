@@ -16,8 +16,13 @@
     - checkonly
     - shell
 
+# there's no easy way to handle this task without having a mcaffee subscription and the appropriate
+# rpms in a pre-configured repository, so we'll just check to see if the package is installed
 - name: "The RHEL 8 operating system must implement the Endpoint Security for Linux Threat Prevention tool."
+  ansible.builtin.shell: |
     /usr/bin/rpm -q mcafeetp
+  register: RHEL_08_010001_result
+  changed_when: RHEL_08_010001_result.rc|int > 0
   notify: "restart mfetpd"
   tags:
     - rhel8-disa-stig-v1r3
@@ -26,6 +31,8 @@
     - RHEL-08-010001
     - V-245540
     - medium
+    - checkonly
+    - shell
 
 - name: "RHEL 8 vendor packaged system security patches and updates must be installed and up to date."
   ansible.builtin.dnf:
