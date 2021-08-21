@@ -21,7 +21,7 @@
   pre_tasks:
     # load service state up front so we can prevent actions on non-existent
     # services
-    - name: "Loading list of installed services."
+    - name: "Populating ansible_facts.services."
       ansible.builtin.service_facts:
       changed_when: false
       check_mode: false
@@ -30,7 +30,7 @@
 
     # load our package list up front so we can reduce time spent on package
     # dependent controls
-    - name: "Loading list of installed packages."
+    - name: "Populating ansible_facts.packages."
       ansible.builtin.package_facts:
         manager: auto
       changed_when: false
