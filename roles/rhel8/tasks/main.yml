@@ -45,11 +45,12 @@
     - medium
     - dnf
 
+# this check could be more complex, but ultimately resolving a fips issue is a non-trivial task
 - name: "RHEL 8 must implement NIST FIPS-validated cryptography for the following: to provision digital signatures, to generate cryptographic hashes, and to protect data requiring data-at-rest protections in accordance with applicable federal laws, Executive Orders, directives, policies, regulations, and standards."
-  shell: |
-    /bin/false
+  ansible.builtin.shell: |
+    /usr/bin/grep -qiPs "1" /proc/sys/crypto/fips_enabled
   register: RHEL_08_010020_result
-  changed_when: RHEL_08_010020_result.rc|int > 0
+  changed_when: RHEL_08_010020_result.rc|int > 0 or ansible_cmdline.fips|int != 1
   failed_when: false
   check_mode: false
   tags:
@@ -61,13 +62,15 @@
     - high
     - checkonly
     - shell
-    - notimplemented
+    - fips
 
+# this is just a first pass to check if there are any non-encrypted file systems; the check is
+# fairly subjective but we can probably reduce the false positives
 - name: "All RHEL 8 local disk partitions must implement cryptographic mechanisms to prevent unauthorized disclosure or modification of all information that requires at rest protection."
-  shell: |
-    /bin/false
+  ansible.builtin.shell: |
+    /usr/sbin/blkid | grep -P '^(?=.*TYPE.*)(?!crypto_LUKS.*).*$'
   register: RHEL_08_010030_result
-  changed_when: RHEL_08_010030_result.rc|int > 0
+  changed_when: RHEL_08_010030_result.stdout_lines|int > 0
   failed_when: false
   check_mode: false
   tags:
