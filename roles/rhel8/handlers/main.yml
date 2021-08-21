@@ -4,7 +4,7 @@
     name: sshd
     state: restarted
     enabled: true
-  when: not kickstart|bool
+  when: not kickstart|bool and '"sshd.service" in ansible_facts.services'
   listen: "restart sshd"
 
 - name: 'Restarting mfetpd'
