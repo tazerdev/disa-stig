@@ -136,7 +136,7 @@
 
 - name: "RHEL 8 must display the Standard Mandatory DoD Notice and Consent Banner before granting local or remote access to the system via a command line user logon."
   ansible.builtin.copy:
-    src: etc/issue
+    src: issue
     dest: /etc/issue
     mode: 0644
   tags:
