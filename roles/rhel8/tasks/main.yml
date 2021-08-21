@@ -1115,7 +1115,7 @@
     - shell
     - notimplemented
 
-- name: "RHEL 8 must use the invoking user's password for privilege escalation when using "sudo"."
+- name: "RHEL 8 must use the invoking user's password for privilege escalation when using 'sudo'."
   ansible.builtin.shell: |
     /bin/false
   register: RHEL_08_010383_result
@@ -1133,7 +1133,7 @@
     - shell
     - notimplemented
 
-- name: "RHEL 8 must require re-authentication when using the "sudo" command."
+- name: "RHEL 8 must require re-authentication when using the 'sudo' command."
   ansible.builtin.shell: |
     /bin/false
   register: RHEL_08_010384_result
