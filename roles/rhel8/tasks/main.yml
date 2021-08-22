@@ -148,12 +148,10 @@
     - medium
 
 - name: "All RHEL 8 remote access methods must be monitored."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010070_result
-  changed_when: RHEL_08_010070_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  lineinfile:
+    path: /etc/rsyslog.conf
+    line: "auth.*;authpriv.*;daemon.* /var/log/secure"
+  notify: "restart rsyslog"
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000032-GPOS-00013
@@ -161,9 +159,6 @@
     - RHEL-08-010070
     - V-230228
     - medium
-    - checkonly
-    - shell
-    - notimplemented
 
 - name: "RHEL 8, for PKI-based authentication, must validate certificates by constructing a certification path (which includes status information) to an accepted trust anchor."
   ansible.builtin.shell: |
