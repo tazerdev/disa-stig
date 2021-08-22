@@ -361,12 +361,11 @@
     - medium
 
 - name: "RHEL 8 operating systems must require authentication upon booting into emergency mode."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010152_result
-  changed_when: RHEL_08_010152_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+   ansible.builtin.ini_file:
+    path: /usr/lib/systemd/system/emergency.service
+    option: ExecStart
+    value: "-/usr/lib/systemd/systemd-sulogin-shell emergency"
+    section: "Service"
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000080-GPOS-00048
@@ -374,9 +373,6 @@
     - RHEL-08-010152
     - V-244523
     - medium
-    - checkonly
-    - shell
-    - notimplemented
 
 - name: "The RHEL 8 pam_unix.so module must be configured in the system-auth file to use a FIPS 140-2 approved cryptographic hashing algorithm for system authentication."
   ansible.builtin.shell: |
