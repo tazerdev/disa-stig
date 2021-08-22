@@ -330,11 +330,12 @@
 
 - name: "RHEL 8 operating systems booted with a BIOS must require authentication upon booting into single-user and maintenance modes."
   ansible.builtin.shell: |
-    /bin/false
+    /usr/bin/grep -iP '^(?=[\s]*+[^#])[^#]*GRUB2_PASSWORD=grub.pbkdf2.sha512' /boot/grub2/user.cfg
   register: RHEL_08_010150_result
   changed_when: RHEL_08_010150_result.rc|int > 0
   failed_when: false
   check_mode: false
+  when: not efi|bool
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000080-GPOS-00048
@@ -344,7 +345,6 @@
     - high
     - checkonly
     - shell
-    - notimplemented
 
 - name: "RHEL 8 operating systems must require authentication upon booting into rescue mode."
   ansible.builtin.shell: |
