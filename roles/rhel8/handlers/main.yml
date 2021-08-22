@@ -7,14 +7,6 @@
   when: not kickstart|bool and '"sshd.service" in ansible_facts.services'
   listen: "restart sshd"
 
-- name: 'Restarting mfetpd'
-  ansible.builtin.systemd:
-    name: mfetpd
-    state: restarted
-    enabled: true
-  when: not kickstart|bool and '"mfetpd.service" in ansible_facts.services'
-  listen: "restart mfetpd"
-
 - name: 'Restarting rsyslog'
   systemd:
     name: rsyslog
