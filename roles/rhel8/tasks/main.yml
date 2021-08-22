@@ -361,7 +361,7 @@
     - medium
 
 - name: "RHEL 8 operating systems must require authentication upon booting into emergency mode."
-   ansible.builtin.ini_file:
+  ansible.builtin.ini_file:
     path: /usr/lib/systemd/system/emergency.service
     option: ExecStart
     value: "-/usr/lib/systemd/systemd-sulogin-shell emergency"
