@@ -80,7 +80,8 @@
         /usr/bin/needs-restarting -r
       register: needs_restarting
       when: "'yum-utils' in ansible_facts.packages"
-      changed_when: false
+      failed_when: false
+      changed_when: needs_restarting.rc|int > 0
       check_mode: false
       tags:
         - always
