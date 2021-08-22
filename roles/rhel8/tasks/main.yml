@@ -491,7 +491,7 @@
 
 - name: "All RHEL 8 public directories must be owned by root or a system account to prevent unauthorized and unintended information transferred via shared system resources."
   ansible.builtin.shell: |
-    /bin/false
+    /usr/bin/find / ! -fstype xfs -prune -o -type d \( -perm -0002 -uid +{{ sys_uid_max }} \) -printf "%u %g %4m %p\n"
   register: RHEL_08_010180_result
   changed_when: RHEL_08_010180_result.rc|int > 0
   failed_when: false
@@ -505,11 +505,10 @@
     - medium
     - checkonly
     - shell
-    - notimplemented
 
 - name: "A sticky bit must be set on all RHEL 8 public directories to prevent unauthorized and unintended information transferred via shared system resources."
   ansible.builtin.shell: |
-    /bin/false
+    /usr/bin/find / ! -fstype xfs -prune -o -type d \( -perm -0002 -a ! -perm -1000 \) -printf "%u %g %4m %p\n"
   register: RHEL_08_010190_result
   changed_when: RHEL_08_010190_result.rc|int > 0
   failed_when: false
@@ -523,15 +522,17 @@
     - medium
     - checkonly
     - shell
-    - notimplemented
 
 - name: "RHEL 8 must be configured so that all network connections associated with SSH traffic are terminated at the end of the session or after 10 minutes of inactivity, except to fulfill documented and validated mission requirements."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010200_result
-  changed_when: RHEL_08_010200_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  lineinfile:
+    create: true
+    owner: root
+    group: root
+    mode: 0600
+    path: /etc/ssh/sshd_config
+    regexp: "(?i)^#?ClientAliveCountMax"
+    line: "ClientAliveCountMax 0"
+  notify: "restart sshd"
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000163-GPOS-00072
@@ -539,17 +540,17 @@
     - RHEL-08-010200
     - V-230244
     - medium
-    - checkonly
-    - shell
-    - notimplemented
 
 - name: "The RHEL 8 SSH daemon must be configured with a timeout interval."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010201_result
-  changed_when: RHEL_08_010201_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  lineinfile:
+    create: true
+    owner: root
+    group: root
+    mode: 0600
+    path: /etc/ssh/sshd_config
+    regexp: "(?i)^#?ClientAliveInterval"
+    line: "ClientAliveInterval 600"
+  notify: "restart sshd"
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000163-GPOS-00072
@@ -557,17 +558,13 @@
     - RHEL-08-010201
     - V-244525
     - medium
-    - checkonly
-    - shell
-    - notimplemented
 
+# per RHEL-08-020351 the system umask should be 077 which means /var/log/messages
+# should already be set to 0600
 - name: "The RHEL 8 /var/log/messages file must have mode 0640 or less permissive."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010210_result
-  changed_when: RHEL_08_010210_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  ansible.builtin.file:
+    path: /var/log/messages
+    mode: 0600
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000206-GPOS-00084
@@ -575,17 +572,11 @@
     - RHEL-08-010210
     - V-230245
     - medium
-    - checkonly
-    - shell
-    - notimplemented
 
 - name: "The RHEL 8 /var/log/messages file must be owned by root."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010220_result
-  changed_when: RHEL_08_010220_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  ansible.builtin.file:
+    path: /var/log/messages
+    owner: root
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000206-GPOS-00084
@@ -593,17 +584,11 @@
     - RHEL-08-010220
     - V-230246
     - medium
-    - checkonly
-    - shell
-    - notimplemented
 
 - name: "The RHEL 8 /var/log/messages file must be group-owned by root."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010230_result
-  changed_when: RHEL_08_010230_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  ansible.builtin.file:
+    path: /var/log/messages
+    group: root
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000206-GPOS-00084
@@ -611,17 +596,11 @@
     - RHEL-08-010230
     - V-230247
     - medium
-    - checkonly
-    - shell
-    - notimplemented
 
 - name: "The RHEL 8 /var/log directory must have mode 0755 or less permissive."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010240_result
-  changed_when: RHEL_08_010240_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  ansible.builtin.file:
+    path: /var/log
+    mode: 0755
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000206-GPOS-00084
@@ -629,17 +608,11 @@
     - RHEL-08-010240
     - V-230248
     - medium
-    - checkonly
-    - shell
-    - notimplemented
 
 - name: "The RHEL 8 /var/log directory must be owned by root."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010250_result
-  changed_when: RHEL_08_010250_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  ansible.builtin.file:
+    path: /var/log
+    owner: root
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000206-GPOS-00084
@@ -647,17 +620,11 @@
     - RHEL-08-010250
     - V-230249
     - medium
-    - checkonly
-    - shell
-    - notimplemented
 
 - name: "The RHEL 8 /var/log directory must be group-owned by root."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010260_result
-  changed_when: RHEL_08_010260_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  ansible.builtin.file:
+    path: /var/log
+    group: root
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000206-GPOS-00084
@@ -665,9 +632,6 @@
     - RHEL-08-010260
     - V-230250
     - medium
-    - checkonly
-    - shell
-    - notimplemented
 
 - name: "The RHEL 8 SSH daemon must be configured to use system-wide crypto policies."
   ansible.builtin.shell: |
