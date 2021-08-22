@@ -151,6 +151,10 @@
   lineinfile:
     path: "{{ rsyslog_path }}"
     line: "auth.*;authpriv.*;daemon.* /var/log/secure"
+    create: true
+    owner: root
+    group: root
+    mode: 0644
   notify: "restart rsyslog"
   tags:
     - rhel8-disa-stig-v1r3
