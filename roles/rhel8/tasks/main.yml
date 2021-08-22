@@ -214,9 +214,9 @@
 
 - name: "RHEL 8 must employ FIPS 140-2 approved cryptographic hashing algorithms for all stored passwords."
   ansible.builtin.shell: |
-    /bin/false
+    awk -F: '$2 !~ "!!|!|*|\\$6\\$*"  {print $1}' /etc/shadow
   register: RHEL_08_010120_result
-  changed_when: RHEL_08_010120_result.rc|int > 0
+  changed_when: RHEL_08_010120_result.stdout_lines|length > 0
   failed_when: false
   check_mode: false
   tags:
@@ -228,7 +228,6 @@
     - medium
     - checkonly
     - shell
-    - notimplemented
 
 - name: "The RHEL 8 password-auth file must be configured to use a sufficient number of hashing rounds."
   ansible.builtin.shell: |
