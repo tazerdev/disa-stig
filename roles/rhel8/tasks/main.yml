@@ -351,11 +351,10 @@
     - shell
 
 - name: "RHEL 8 operating systems must require authentication upon booting into rescue mode."
-  ansible.builtin.ini_file:
+  ansible.builtin.replace:
     path: /usr/lib/systemd/system/rescue.service
-    option: ExecStart
-    value: "-/usr/lib/systemd/systemd-sulogin-shell rescue"
-    section: "Service"
+    regexp: '^(?=ExecStart\b)(.*=)(.*)$'
+    replace: '\g<1>-/usr/lib/systemd/systemd-sulogin-shell rescue'
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000080-GPOS-00048
@@ -365,11 +364,10 @@
     - medium
 
 - name: "RHEL 8 operating systems must require authentication upon booting into emergency mode."
-  ansible.builtin.ini_file:
+  ansible.builtin.replace:
     path: /usr/lib/systemd/system/emergency.service
-    option: ExecStart
-    value: "-/usr/lib/systemd/systemd-sulogin-shell emergency"
-    section: "Service"
+    regexp: '^(?=ExecStart\b)(.*=)(.*)$'
+    replace: '\g<1>-/usr/lib/systemd/systemd-sulogin-shell emergency'
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000080-GPOS-00048
