@@ -647,12 +647,10 @@
     - medium
 
 - name: "The RHEL 8 SSH server must be configured to use only Message Authentication Codes (MACs) employing FIPS 140-2 validated cryptographic hash algorithms."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010290_result
-  changed_when: RHEL_08_010290_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  ansible.builtin.replace:
+    path: /etc/crypto-policies/back-ends/opensshserver.config
+    regexp: '^(?=CRYPTO_POLICY=)(.*)(-oMACs=\S*)(.*)$'
+    replace: '\g<1>-oMACS=hmac-sha2-512,hmac-sha2-256\g<3>'
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000250-GPOS-00093
@@ -660,17 +658,12 @@
     - RHEL-08-010290
     - V-230251
     - medium
-    - checkonly
-    - shell
-    - notimplemented
 
 - name: "The RHEL 8 operating system must implement DoD-approved encryption to protect the confidentiality of SSH server connections."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010291_result
-  changed_when: RHEL_08_010291_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  ansible.builtin.replace:
+    path: /etc/crypto-policies/back-ends/opensshserver.config
+    regexp: '^(?=CRYPTO_POLICY=)(.*)(-oCiphers=\S*)(.*)$'
+    replace: '\g<1>-oCiphers=aes256-ctr,aes192-ctr,aes128-ctr\g<3>'
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000250-GPOS-00093
@@ -678,17 +671,12 @@
     - RHEL-08-010291
     - V-230252
     - medium
-    - checkonly
-    - shell
-    - notimplemented
 
 - name: "RHEL 8 must ensure the SSH server uses strong entropy."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010292_result
-  changed_when: RHEL_08_010292_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  ansible.builtin.replace:
+    path: /etc/sysconfig/sshd
+    regexp: '^(?i)(?=.*SSH_USE_STRONG_RNG)(?!#|\s*#)(.*)$'
+    replace: 'SSH_USE_STRONG_RNG=32'
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000480-GPOS-00227
@@ -696,17 +684,13 @@
     - RHEL-08-010292
     - V-230253
     - low
-    - checkonly
-    - shell
-    - notimplemented
 
 - name: "The RHEL 8 operating system must implement DoD-approved encryption in the OpenSSL package."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010293_result
-  changed_when: RHEL_08_010293_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  ansible.builtin.ini_file:
+    path: /etc/pki/tls/openssl.cnf
+    allow_no_value: true
+    option: ".include /etc/crypto-policies/back-ends/opensslcnf.config"
+    section: "crypto_policy"
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000250-GPOS-00093
@@ -714,17 +698,12 @@
     - RHEL-08-010293
     - V-230254
     - medium
-    - checkonly
-    - shell
-    - notimplemented
 
 - name: "The RHEL 8 operating system must implement DoD-approved TLS encryption in the OpenSSL package."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010294_result
-  changed_when: RHEL_08_010294_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  ansible.builtin.lineinfile:
+    dest: /etc/crypto-policies/back-ends/opensslcnf.config
+    regexp: "(?i)^#?MinProtocol"
+    line: MinProtocol = TLSv1.2
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000250-GPOS-00093
@@ -732,13 +711,10 @@
     - RHEL-08-010294
     - V-230255
     - medium
-    - checkonly
-    - shell
-    - notimplemented
 
 - name: "The RHEL 8 operating system must implement DoD-approved TLS encryption in the GnuTLS package."
   ansible.builtin.shell: |
-    /bin/false
+    /usr/bin/grep -iP "\+VERS-ALL:-VERS-DTLS0.9:-VERS-SSL3.0:-VERS-TLS1.0:-VERS-TLS1.1:-VERS-DTLS1.0" /etc/crypto-policies/back-ends/gnutls.config
   register: RHEL_08_010295_result
   changed_when: RHEL_08_010295_result.rc|int > 0
   failed_when: false
@@ -752,7 +728,6 @@
     - medium
     - checkonly
     - shell
-    - notimplemented
 
 - name: "RHEL 8 system commands must have mode 0755 or less permissive."
   ansible.builtin.shell: |
