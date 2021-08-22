@@ -90,5 +90,6 @@
       ansible.builtin.reboot:
         reboot_timeout: 3600
       when: allow_reboot and (needs_rebooting or needs_restarting.rc|int > 0)
+      ignore_errors: true
       tags:
         - always
