@@ -85,16 +85,9 @@
       tags:
         - always
 
-    - name: "Updating reboot fact."
-      ansible.builtin.set_fact:
-        needs_rebooting: true
-      when: needs_restarting is defined and needs_restarting
-      tags:
-        - always
-
-    - name: Reboot a slow machine that might have lots of updates to apply
+    - name: "Reboot if needed and allowed."
       ansible.builtin.reboot:
         reboot_timeout: 3600
-      when: allow_reboot and needs_rebooting
+      when: allow_reboot and (needs_rebooting or needs_restarting.rc|int > 0)
       tags:
         - always
