@@ -8,3 +8,10 @@ kickstart: false
 rsyslog_path: /etc/rsyslog.d/disa-stig.conf
 
 selinux_policy: targeted
+
+# these are defaults for RHEL but may be customized as needed if your sys_id
+# ranges are non-standard
+sys_uid_min: 201
+sys_uid_max: 999
+sys_gid_min: 201
+sys_gid_max: 999
