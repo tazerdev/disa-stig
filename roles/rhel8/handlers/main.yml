@@ -14,3 +14,12 @@
     enabled: true
   when: not kickstart|bool and '"mfetpd.service" in ansible_facts.services'
   listen: "restart mfetpd"
+
+- name: 'Restarting rsyslog'
+  systemd:
+    name: rsyslog
+    state: restarted
+    enabled: true
+    daemon_reload: true
+  when: not kickstart|bool and '"rsyslog.service" in ansible_facts.services'
+  listen: "restart rsyslog"
