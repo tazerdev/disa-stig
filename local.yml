@@ -45,6 +45,22 @@
         gui: true
       when: "'xorg-x11-server-Xorg' in ansible_facts.packages"
 
+    - name: "Testing for /sys/firmware/efi"
+      ansible.builtin.stat:
+        path: /sys/firmware/efi
+      register: efi_path
+      tags:
+        - always
+
+    - name: "Setting efi fact"
+      ansible.builtin.set_fact:
+        efi: true
+      when: efi_path.stat.exists
+      changed_when: false
+      check_mode: false
+      tags:
+        - always
+
   # ---------------------------------------------------------------------------
   # roles
   # ---------------------------------------------------------------------------
