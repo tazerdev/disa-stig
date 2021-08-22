@@ -82,3 +82,11 @@ The high/medium/low, SRG-*, SV-*, RHEL-*, and V-* tags are all taken from the ST
 - **shell**: Where approrpiate we'll use a tag to logically group controls. By default all controls use the shell module and we want to keep track of those, so we start with the shell tag.
 
 - **notimplemented**: Until we actually implement the control, all tasks are notimplemented.
+
+## Running the Playbook
+
+We always want to run it in check mode first:
+
+```Bash
+ansible-pull --checkout=main --directory=/tmp --url=https://github.com/tazerdev/disa-stig.git --check --skip-tags=notimplemented
+```
