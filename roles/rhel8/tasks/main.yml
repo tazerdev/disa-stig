@@ -180,7 +180,8 @@
     - shell
     - notimplemented
 
-# this is too arbitrary to implement
+# checking this control would mean finding every private key on a system and
+# reviewing its permissions, even though private keys can have any name
 - name: "RHEL 8, for certificate-based authentication, must enforce authorized access to the corresponding private key."
   ansible.builtin.shell: |
     /bin/false
