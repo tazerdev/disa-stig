@@ -6,6 +6,12 @@ kickstart: false
 
 # where possible we'll put stig settings into their own file in a .d directory
 rsyslog_path: /etc/rsyslog.d/disa-stig.conf
+auditd_path: /etc/audit/rules.d/disa-stig.conf
+
+# sysctl merges files with /usr/lib/sysctl.d based on order, so we need to put
+# stig controls in a file numbered with a higher precedence so these controls
+# will be applied later and override earlier settings
+sysctl_path: /etc/sysctl.d/99-disa-stig.conf
 
 selinux_policy: targeted
 
