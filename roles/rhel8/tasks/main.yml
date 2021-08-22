@@ -149,7 +149,7 @@
 
 - name: "All RHEL 8 remote access methods must be monitored."
   lineinfile:
-    path: /etc/rsyslog.conf
+    path: "{{ rsyslog_path }}"
     line: "auth.*;authpriv.*;daemon.* /var/log/secure"
   notify: "restart rsyslog"
   tags:
