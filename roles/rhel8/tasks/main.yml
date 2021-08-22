@@ -242,20 +242,7 @@
     - pam_module: password-auth
       state: args_present
       args:
-        - "sha512"
-        - "shadow"
-        - "try_first_pass"
-        - "use_authtok"
         - "rounds=5000"
-
-    - pam_module: password-auth
-      state: args_absent
-      args:
-        - "md5"
-        - "bigcrypt"
-        - "sha256"
-        - "blowfish"
-        - "nullok"
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000073-GPOS-00041
@@ -277,20 +264,7 @@
     - pam_module: system-auth
       state: args_present
       args:
-        - "sha512"
-        - "shadow"
-        - "try_first_pass"
-        - "use_authtok"
         - "rounds=5000"
-
-    - pam_module: system-auth
-      state: args_absent
-      args:
-        - "md5"
-        - "bigcrypt"
-        - "sha256"
-        - "blowfish"
-        - "nullok"
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000073-GPOS-00041
