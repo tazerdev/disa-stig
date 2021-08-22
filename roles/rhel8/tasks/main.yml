@@ -160,6 +160,8 @@
     - V-230228
     - medium
 
+# this is too arbitrary to implement without an official DoD certificate, can be adapted to
+# an organizational certificate if need be
 - name: "RHEL 8, for PKI-based authentication, must validate certificates by constructing a certification path (which includes status information) to an accepted trust anchor."
   ansible.builtin.shell: |
     /bin/false
@@ -178,6 +180,7 @@
     - shell
     - notimplemented
 
+# this is too arbitrary to implement
 - name: "RHEL 8, for certificate-based authentication, must enforce authorized access to the corresponding private key."
   ansible.builtin.shell: |
     /bin/false
