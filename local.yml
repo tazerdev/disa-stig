@@ -44,6 +44,8 @@
       ansible.builtin.set_fact:
         gui: true
       when: "'xorg-x11-server-Xorg' in ansible_facts.packages"
+      tags:
+        - always
 
     - name: "Testing for /sys/firmware/efi"
       ansible.builtin.stat:
@@ -94,3 +96,5 @@
       ansible.builtin.reboot:
         reboot_timeout: 3600
       when: allow_reboot and needs_rebooting
+      tags:
+        - always
