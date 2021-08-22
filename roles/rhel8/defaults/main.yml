@@ -3,3 +3,7 @@ banner_message: 'You are accessing a U.S. Government (USG) Information System (I
 gui: false
 efi: false
 kickstart: false
+
+# where possible we'll put stig settings into their own file in a .d directory
+rsyslog_path: /etc/rsyslog.d/disa-stig.conf
+
