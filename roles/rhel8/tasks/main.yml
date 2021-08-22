@@ -466,6 +466,7 @@
 - name: "RHEL 8 must use a Linux Security Module configured to enforce limits on system services."
   selinux:
     state: enforcing
+    policy: "{{ selinux_policy }}"
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000134-GPOS-00068

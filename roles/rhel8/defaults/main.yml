@@ -7,3 +7,4 @@ kickstart: false
 # where possible we'll put stig settings into their own file in a .d directory
 rsyslog_path: /etc/rsyslog.d/disa-stig.conf
 
+selinux_policy: targeted
