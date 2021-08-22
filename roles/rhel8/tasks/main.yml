@@ -397,12 +397,18 @@
     - pamd
 
 - name: "The RHEL 8 pam_unix.so module must be configured in the password-auth file to use a FIPS 140-2 approved cryptographic hashing algorithm for system authentication."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010160_result
-  changed_when: RHEL_08_010160_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  ansible.builtin.pamd:
+    name: "{{ item.pam_module }}"
+    state: "{{ item.state }}"
+    type: password
+    control: sufficient
+    module_path: pam_unix.so
+    module_arguments: "{{ item.args }}"
+  with_items:
+    - pam_module: password-auth
+      state: args_present
+      args:
+        - "sha512"
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000120-GPOS-00061
@@ -410,9 +416,7 @@
     - RHEL-08-010160
     - V-230237
     - medium
-    - checkonly
-    - shell
-    - notimplemented
+    - pamd
 
 - name: "RHEL 8 must prevent system daemons from using Kerberos for authentication."
   ansible.builtin.shell: |
