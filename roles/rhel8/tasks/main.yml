@@ -276,8 +276,7 @@
 
 - name: "RHEL 8 operating systems booted with United Extensible Firmware Interface (UEFI) must require authentication upon booting into single-user mode and maintenance."
   ansible.builtin.shell: |
-    /usr/bin/grep -qiPs '^(?=[\s]*+[^#])[^#]*GRUB2_PASSWORD=grub.pbkdf2.sha512' /boot/efi/EFI/redhat/user.cfg && \
-    /usr/bin/grep -qiPs '^(?=[\s]*+[^#])[^#]*superusers=\"root\"' /boot/efi/EFI/redhat/grub.cfg
+    /usr/bin/grep -iP '^(?=[\s]*+[^#])[^#]*GRUB2_PASSWORD=grub.pbkdf2.sha512' /boot/efi/EFI/redhat/user.cfg
   register: RHEL_08_010140_result
   changed_when: RHEL_08_010140_result.rc|int > 0
   failed_when: false
