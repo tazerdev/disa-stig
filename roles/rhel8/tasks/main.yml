@@ -634,12 +634,10 @@
     - medium
 
 - name: "The RHEL 8 SSH daemon must be configured to use system-wide crypto policies."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010287_result
-  changed_when: RHEL_08_010287_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  ansible.builtin.replace:
+    path: /etc/sysconfig/sshd
+    regexp: '^(?i)(?=.*CRYPTO_POLICY)(?!#|\s*#)(.*)$'
+    replace: '#\1'
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000250-GPOS-00093
@@ -647,9 +645,6 @@
     - RHEL-08-010287
     - V-244526
     - medium
-    - checkonly
-    - shell
-    - notimplemented
 
 - name: "The RHEL 8 SSH server must be configured to use only Message Authentication Codes (MACs) employing FIPS 140-2 validated cryptographic hash algorithms."
   ansible.builtin.shell: |
