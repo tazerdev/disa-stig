@@ -294,11 +294,12 @@
 
 - name: "RHEL 8 operating systems booted with United Extensible Firmware Interface (UEFI) must require a unique superusers name upon booting into single-user mode and maintenance."
   ansible.builtin.shell: |
-    /bin/false
+    /usr/bin/grep -iP '^(?=[\s]*+[^#])[^#]*superusers=\"root\"' /boot/efi/EFI/redhat/grub.cfg
   register: RHEL_08_010141_result
   changed_when: RHEL_08_010141_result.rc|int > 0
   failed_when: false
   check_mode: false
+  when: efi|bool
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000080-GPOS-00048
@@ -308,7 +309,6 @@
     - medium
     - checkonly
     - shell
-    - notimplemented
 
 - name: "RHEL 8 operating systems booted with a BIOS must require  a unique superusers name upon booting into single-user and maintenance modes."
   ansible.builtin.shell: |
