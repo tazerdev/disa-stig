@@ -422,9 +422,9 @@
 
 - name: "RHEL 8 must prevent system daemons from using Kerberos for authentication."
   ansible.builtin.shell: |
-    /bin/false
+    /usr/bin/ls -la /etc/*.keytab
   register: RHEL_08_010161_result
-  changed_when: RHEL_08_010161_result.rc|int > 0
+  changed_when: RHEL_08_010161_result.stdout_lines|length > 0
   failed_when: false
   check_mode: false
   tags:
@@ -436,15 +436,11 @@
     - medium
     - checkonly
     - shell
-    - notimplemented
 
 - name: "The krb5-workstation package must not be installed on RHEL 8."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010162_result
-  changed_when: RHEL_08_010162_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  ansible.builtin.dnf:
+    name: krb5-workstation
+    state: absent
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000120-GPOS-00061
@@ -452,17 +448,12 @@
     - RHEL-08-010162
     - V-230239
     - medium
-    - checkonly
-    - shell
-    - notimplemented
+    - dnf
 
 - name: "The krb5-server package must not be installed on RHEL 8."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010163_result
-  changed_when: RHEL_08_010163_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  ansible.builtin.dnf:
+    name: krb5-server
+    state: absent
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000120-GPOS-00061
@@ -470,17 +461,11 @@
     - RHEL-08-010163
     - V-237640
     - medium
-    - checkonly
-    - shell
-    - notimplemented
+    - dnf
 
 - name: "RHEL 8 must use a Linux Security Module configured to enforce limits on system services."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010170_result
-  changed_when: RHEL_08_010170_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  selinux:
+    state: enforcing
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000134-GPOS-00068
@@ -488,17 +473,12 @@
     - RHEL-08-010170
     - V-230240
     - medium
-    - checkonly
-    - shell
-    - notimplemented
+    - selinux
 
 - name: "RHEL 8 must have policycoreutils package installed."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010171_result
-  changed_when: RHEL_08_010171_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  ansible.builtin.dnf:
+    name: policycoreutils
+    state: present
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000134-GPOS-00068
@@ -506,9 +486,7 @@
     - RHEL-08-010171
     - V-230241
     - low
-    - checkonly
-    - shell
-    - notimplemented
+    - dnf
 
 - name: "All RHEL 8 public directories must be owned by root or a system account to prevent unauthorized and unintended information transferred via shared system resources."
   ansible.builtin.shell: |
