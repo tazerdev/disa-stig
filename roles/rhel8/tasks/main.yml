@@ -200,12 +200,10 @@
     - notimplemented
 
 - name: "RHEL 8 must encrypt all stored passwords with a FIPS 140-2 approved cryptographic hashing algorithm."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010110_result
-  changed_when: RHEL_08_010110_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  ansible.builtin.lineinfile:
+    dest: /etc/login.defs
+    regexp: ^#?ENCRYPT_METHOD
+    line: "ENCRYPT_METHOD SHA512"
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000073-GPOS-00041
@@ -213,9 +211,6 @@
     - RHEL-08-010110
     - V-230231
     - medium
-    - checkonly
-    - shell
-    - notimplemented
 
 - name: "RHEL 8 must employ FIPS 140-2 approved cryptographic hashing algorithms for all stored passwords."
   ansible.builtin.shell: |
