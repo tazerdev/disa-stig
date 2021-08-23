@@ -115,9 +115,6 @@
     - RHEL-08-010049
     - V-244519
     - medium
-    - checkonly
-    - shell
-    - notimplemented
 
 - name: "RHEL 8 must display the Standard Mandatory DoD Notice and Consent Banner before granting local or remote access to the system via a graphical user logon."
   ansible.builtin.ini_file:
@@ -731,9 +728,9 @@
 
 - name: "RHEL 8 system commands must have mode 0755 or less permissive."
   ansible.builtin.shell: |
-    /bin/false
+    /usr/bin/find -L /bin /sbin /usr/bin /usr/sbin /usr/local/bin /usr/local/sbin -perm /0022 -type f -printf "%u %g %4m %p\n"
   register: RHEL_08_010300_result
-  changed_when: RHEL_08_010300_result.rc|int > 0
+  changed_when: RHEL_08_010300_result.stdout_lines|length > 0
   failed_when: false
   check_mode: false
   tags:
@@ -745,11 +742,10 @@
     - medium
     - checkonly
     - shell
-    - notimplemented
 
 - name: "RHEL 8 system commands must be owned by root."
   ansible.builtin.shell: |
-    /bin/false
+    /usr/bin/find -L /bin /sbin /usr/bin /usr/sbin /usr/local/bin /usr/local/sbin -type f ! -user root -printf "%u %g %4m %p\n"
   register: RHEL_08_010310_result
   changed_when: RHEL_08_010310_result.rc|int > 0
   failed_when: false
@@ -763,11 +759,10 @@
     - medium
     - checkonly
     - shell
-    - notimplemented
 
 - name: "RHEL 8 system commands must be group-owned by root or a system account."
   ansible.builtin.shell: |
-    /bin/false
+    /usr/bin/find -L /bin /sbin /usr/bin /usr/sbin /usr/local/bin /usr/local/sbin -type f -gid +{{sys_uid_max}} -printf "%u %g %4m %p\n"
   register: RHEL_08_010320_result
   changed_when: RHEL_08_010320_result.rc|int > 0
   failed_when: false
@@ -781,11 +776,10 @@
     - medium
     - checkonly
     - shell
-    - notimplemented
 
 - name: "RHEL 8 library files must have mode 0755 or less permissive."
   ansible.builtin.shell: |
-    /bin/false
+    /usr/bin/find -L /lib /lib64 /usr/lib /usr/lib64 -perm /0022 -type f -printf "%u %g %4m %p\n"
   register: RHEL_08_010330_result
   changed_when: RHEL_08_010330_result.rc|int > 0
   failed_when: false
@@ -799,11 +793,10 @@
     - medium
     - checkonly
     - shell
-    - notimplemented
 
 - name: "RHEL 8 library files must be owned by root."
   ansible.builtin.shell: |
-    /bin/false
+    /usr/bin/find -L /lib /lib64 /usr/lib /usr/lib64 -type f ! -user root -printf "%u %g %4m %p\n"
   register: RHEL_08_010340_result
   changed_when: RHEL_08_010340_result.rc|int > 0
   failed_when: false
@@ -821,7 +814,7 @@
 
 - name: "RHEL 8 library files must be group-owned by root or a system account."
   ansible.builtin.shell: |
-    /bin/false
+    /usr/bin/find -L /lib /lib64 /usr/lib /usr/lib64 -type f -gid +{{sys_uid_max}} -printf "%u %g %4m %p\n"
   register: RHEL_08_010350_result
   changed_when: RHEL_08_010350_result.rc|int > 0
   failed_when: false
@@ -835,15 +828,13 @@
     - medium
     - checkonly
     - shell
-    - notimplemented
 
+# the check for this control is too subjective so we'll just ensure aide is
+# installed
 - name: "The RHEL 8 file integrity tool must notify the system administrator when changes to the baseline configuration or anomalies in the operation of any security functions are discovered within an organizationally defined frequency."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010360_result
-  changed_when: RHEL_08_010360_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  ansible.builtin.dnf:
+    name: aide
+    state: present
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000363-GPOS-00150
@@ -851,15 +842,13 @@
     - RHEL-08-010360
     - V-230263
     - medium
-    - checkonly
-    - shell
-    - notimplemented
+    - dnf
 
 - name: "RHEL 8 must prevent the installation of software, patches, service packs, device drivers, or operating system components from a repository without verification they have been digitally signed using a certificate that is issued by a Certificate Authority (CA) that is recognized and approved by the organization."
   ansible.builtin.shell: |
-    /bin/false
+    /usr/bin/grep -iP '^(?=[\s]*+[^#])(gpgcheck.*=.*)0' /etc/yum.repos.d/*.repo
   register: RHEL_08_010370_result
-  changed_when: RHEL_08_010370_result.rc|int > 0
+  changed_when: RHEL_08_010370_result.stdout_lines|length > 0
   failed_when: false
   check_mode: false
   tags:
@@ -871,15 +860,13 @@
     - high
     - checkonly
     - shell
-    - notimplemented
 
 - name: "RHEL 8 must prevent the installation of software, patches, service packs, device drivers, or operating system components of local packages without verification they have been digitally signed using a certificate that is issued by a Certificate Authority (CA) that is recognized and approved by the organization."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010371_result
-  changed_when: RHEL_08_010371_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  ini_file:
+    path: /etc/dnf/dnf.conf
+    option: localpkg_gpgcheck
+    value: "True"
+    section: main
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000366-GPOS-00153
@@ -887,17 +874,15 @@
     - RHEL-08-010371
     - V-230265
     - high
-    - checkonly
-    - shell
-    - notimplemented
 
 - name: "RHEL 8 must prevent the loading of a new kernel for later execution."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010372_result
-  changed_when: RHEL_08_010372_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  sysctl:
+    name: kernel.kexec_load_disabled
+    value: 1
+    reload: yes
+    ignoreerrors: true
+    sysctl_file: /etc/sysctl.d/99-disa-stig.conf
+    sysctl_set: true
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000366-GPOS-00153
@@ -905,17 +890,16 @@
     - RHEL-08-010372
     - V-230266
     - medium
-    - checkonly
-    - shell
-    - notimplemented
+    - sysctl
 
 - name: "RHEL 8 must enable kernel parameters to enforce discretionary access control on symlinks."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010373_result
-  changed_when: RHEL_08_010373_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  sysctl:
+    name: fs.protected_symlinks
+    value: 1
+    reload: yes
+    ignoreerrors: true
+    sysctl_file: /etc/sysctl.d/99-disa-stig.conf
+    sysctl_set: true
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000312-GPOS-00122
@@ -923,17 +907,16 @@
     - RHEL-08-010373
     - V-230267
     - medium
-    - checkonly
-    - shell
-    - notimplemented
+    - sysctl
 
 - name: "RHEL 8 must enable kernel parameters to enforce discretionary access control on hardlinks."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010374_result
-  changed_when: RHEL_08_010374_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  sysctl:
+    name: fs.protected_hardlinks
+    value: 1
+    reload: yes
+    ignoreerrors: true
+    sysctl_file: /etc/sysctl.d/99-disa-stig.conf
+    sysctl_set: true
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000312-GPOS-00122
@@ -941,17 +924,16 @@
     - RHEL-08-010374
     - V-230268
     - medium
-    - checkonly
-    - shell
-    - notimplemented
+    - sysctl
 
 - name: "RHEL 8 must restrict access to the kernel message buffer."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010375_result
-  changed_when: RHEL_08_010375_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  sysctl:
+    name: kernel.dmesg_restrict
+    value: 1
+    reload: yes
+    ignoreerrors: true
+    sysctl_file: /etc/sysctl.d/99-disa-stig.conf
+    sysctl_set: true
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000138-GPOS-00069
@@ -959,17 +941,15 @@
     - RHEL-08-010375
     - V-230269
     - low
-    - checkonly
-    - shell
-    - notimplemented
+    - sysctl
 
 - name: "RHEL 8 must prevent kernel profiling by unprivileged users."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010376_result
-  changed_when: RHEL_08_010376_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+    name: kernel.perf_event_paranoid
+    value: 2
+    reload: yes
+    ignoreerrors: true
+    sysctl_file: /etc/sysctl.d/99-disa-stig.conf
+    sysctl_set: true
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000138-GPOS-00069
@@ -977,15 +957,13 @@
     - RHEL-08-010376
     - V-230270
     - low
-    - checkonly
-    - shell
-    - notimplemented
+    - sysctl
 
 - name: "RHEL 8 must require users to provide a password for privilege escalation."
   ansible.builtin.shell: |
-    /bin/false
+    /usr/bin/grep -iPs '^(?=[\s]*+[^#])[^#]*NOPASSWD' /etc/sudoers /etc/sudoers.d/* | /usr/bin/awk -F: {'print $1'}
   register: RHEL_08_010380_result
-  changed_when: RHEL_08_010380_result.rc|int > 0
+  changed_when: RHEL_08_010380_result.stdout_lines|length > 0
   failed_when: false
   check_mode: false
   tags:
@@ -997,13 +975,12 @@
     - medium
     - checkonly
     - shell
-    - notimplemented
 
 - name: "RHEL 8 must require users to reauthenticate for privilege escalation."
   ansible.builtin.shell: |
-    /bin/false
+    /usr/bin/grep -qiPs '^(?=[\s]*+[^#])[^#]*!authenticate' /etc/sudoers /etc/sudoers.d/* | /usr/bin/awk -F: {'print $1'}
   register: RHEL_08_010381_result
-  changed_when: RHEL_08_010381_result.rc|int > 0
+  changed_when: RHEL_08_010381_result.stdout_lines|length > 0
   failed_when: false
   check_mode: false
   tags:
@@ -1015,11 +992,10 @@
     - medium
     - checkonly
     - shell
-    - notimplemented
 
 - name: "RHEL 8 must restrict privilege elevation to authorized personnel."
   ansible.builtin.shell: |
-    /bin/false
+    /usr/bin/grep -iPs '^ALL\s.*ALL=\(ALL\)\s.*ALL' /etc/sudoers /etc/sudoers.d/* | /usr/bin/awk -F: {'print $1":" $2'}
   register: RHEL_08_010382_result
   changed_when: RHEL_08_010382_result.rc|int > 0
   failed_when: false
@@ -1033,15 +1009,20 @@
     - medium
     - checkonly
     - shell
-    - notimplemented
 
 - name: "RHEL 8 must use the invoking user's password for privilege escalation when using 'sudo'."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010383_result
-  changed_when: RHEL_08_010383_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  blockinfile:
+    path: /etc/sudoers.d/disa-stig
+    state: present
+    create: true
+    owner: root
+    group: root
+    mode: 0440
+    marker: "# {mark} RHEL-08-010383"
+    block: |
+      Defaults !targetpw
+      Defaults !rootpw
+      Defaults !runaspw
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000480-GPOS-00227
@@ -1049,17 +1030,19 @@
     - RHEL-08-010383
     - V-237642
     - medium
-    - checkonly
-    - shell
-    - notimplemented
+    - sudoers
 
 - name: "RHEL 8 must require re-authentication when using the 'sudo' command."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010384_result
-  changed_when: RHEL_08_010384_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  blockinfile:
+    path: /etc/sudoers.d/disa-stig
+    state: present
+    create: true
+    owner: root
+    group: root
+    mode: 0440
+    marker: "# {mark} RHEL-08-010384"
+    block: |
+      Defaults timestamp_timeout=0
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000373-GPOS-00156
@@ -1067,17 +1050,14 @@
     - RHEL-08-010384
     - V-237643
     - medium
-    - checkonly
-    - shell
-    - notimplemented
+    - sudoers
 
 - name: "RHEL 8 must have the packages required for multifactor authentication installed."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010390_result
-  changed_when: RHEL_08_010390_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  dnf:
+    name:
+      - esc
+      - openssl-pkcs11
+    state: present
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000375-GPOS-00160
@@ -1085,17 +1065,15 @@
     - RHEL-08-010390
     - V-230273
     - medium
-    - checkonly
-    - shell
-    - notimplemented
+    - dnf
 
 - name: "RHEL 8 must implement certificate status checking for multifactor authentication."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010400_result
-  changed_when: RHEL_08_010400_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  ansible.builtin.ini_file:
+    option: certificate_verification
+    value: "ocsp_dgst=sha1"
+    section: "sssd"
+  notify: "restart sssd"
+  when: "'sssd' in ansible_facts.packages"
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000375-GPOS-00160
@@ -1103,9 +1081,7 @@
     - RHEL-08-010400
     - V-230274
     - medium
-    - checkonly
-    - shell
-    - notimplemented
+    - sssd
 
 - name: "RHEL 8 must accept Personal Identity Verification (PIV) credentials."
   ansible.builtin.shell: |
