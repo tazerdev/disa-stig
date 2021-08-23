@@ -862,7 +862,7 @@
     - shell
 
 - name: "RHEL 8 must prevent the installation of software, patches, service packs, device drivers, or operating system components of local packages without verification they have been digitally signed using a certificate that is issued by a Certificate Authority (CA) that is recognized and approved by the organization."
-  ini_file:
+  ansible.builtin.ini_file:
     path: /etc/dnf/dnf.conf
     option: localpkg_gpgcheck
     value: "True"
@@ -876,7 +876,7 @@
     - high
 
 - name: "RHEL 8 must prevent the loading of a new kernel for later execution."
-  sysctl:
+  ansible.builtin.sysctl:
     name: kernel.kexec_load_disabled
     value: 1
     reload: yes
@@ -893,7 +893,7 @@
     - sysctl
 
 - name: "RHEL 8 must enable kernel parameters to enforce discretionary access control on symlinks."
-  sysctl:
+  ansible.builtin.sysctl:
     name: fs.protected_symlinks
     value: 1
     reload: yes
@@ -910,7 +910,7 @@
     - sysctl
 
 - name: "RHEL 8 must enable kernel parameters to enforce discretionary access control on hardlinks."
-  sysctl:
+  ansible.builtin.sysctl:
     name: fs.protected_hardlinks
     value: 1
     reload: yes
@@ -927,7 +927,7 @@
     - sysctl
 
 - name: "RHEL 8 must restrict access to the kernel message buffer."
-  sysctl:
+  ansible.builtin.sysctl:
     name: kernel.dmesg_restrict
     value: 1
     reload: yes
@@ -944,6 +944,7 @@
     - sysctl
 
 - name: "RHEL 8 must prevent kernel profiling by unprivileged users."
+  ansible.builtin.sysctl:
     name: kernel.perf_event_paranoid
     value: 2
     reload: yes
@@ -1011,7 +1012,7 @@
     - shell
 
 - name: "RHEL 8 must use the invoking user's password for privilege escalation when using 'sudo'."
-  blockinfile:
+  ansible.builtin.blockinfile:
     path: /etc/sudoers.d/disa-stig
     state: present
     create: true
@@ -1033,7 +1034,7 @@
     - sudoers
 
 - name: "RHEL 8 must require re-authentication when using the 'sudo' command."
-  blockinfile:
+  ansible.builtin.blockinfile:
     path: /etc/sudoers.d/disa-stig
     state: present
     create: true
@@ -1053,7 +1054,7 @@
     - sudoers
 
 - name: "RHEL 8 must have the packages required for multifactor authentication installed."
-  dnf:
+  ansible.builtin.dnf:
     name:
       - esc
       - openssl-pkcs11
