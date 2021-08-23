@@ -1070,6 +1070,7 @@
 
 - name: "RHEL 8 must implement certificate status checking for multifactor authentication."
   ansible.builtin.ini_file:
+    path: /etc/sssd/sssd.conf
     option: certificate_verification
     value: "ocsp_dgst=sha1"
     section: "sssd"
