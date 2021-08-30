@@ -1189,12 +1189,15 @@
     - sysctl
 
 - name: "YUM must remove all software components after updated versions have been installed on RHEL 8."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010440_result
-  changed_when: RHEL_08_010440_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  ansible.builtin.ini_file:
+    create: true
+    owner: root
+    group: root
+    mode: 0644
+    path: /etc/dnf/dnf.conf
+    option: "clean_requirements_on_remove"
+    value: "True"
+    section: "main"
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000437-GPOS-00194
@@ -1202,17 +1205,16 @@
     - RHEL-08-010440
     - V-230281
     - low
-    - checkonly
-    - shell
-    - notimplemented
 
 - name: "RHEL 8 must enable the SELinux targeted policy."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010450_result
-  changed_when: RHEL_08_010450_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  ansible.builtin.lineinfile:
+    create: true
+    owner: root
+    group: root
+    mode: 0644
+    path: /etc/selinux/config
+    regexp: "(?i)^#?SELINUXTYPE"
+    line: "SELINUXTYPE=targeted"
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000445-GPOS-00199
@@ -1220,15 +1222,12 @@
     - RHEL-08-010450
     - V-230282
     - medium
-    - checkonly
-    - shell
-    - notimplemented
 
 - name: "There must be no shosts.equiv files on the RHEL 8 operating system."
   ansible.builtin.shell: |
-    /bin/false
+    /usr/bin/find / ! -fstype xfs -prune -o -name shosts.equiv -printf "%u %g %4m %p\n"
   register: RHEL_08_010460_result
-  changed_when: RHEL_08_010460_result.rc|int > 0
+  changed_when: RHEL_08_010460_result.stdout_lines|length > 0
   failed_when: false
   check_mode: false
   tags:
@@ -1240,13 +1239,12 @@
     - high
     - checkonly
     - shell
-    - notimplemented
 
 - name: "There must be no .shosts files on the RHEL 8 operating system."
   ansible.builtin.shell: |
-    /bin/false
+    /usr/bin/find / ! -fstype xfs -prune -o -name \*.shosts -printf "%u %g %4m %p\n"
   register: RHEL_08_010470_result
-  changed_when: RHEL_08_010470_result.rc|int > 0
+  changed_when: RHEL_08_010470_result.stdout_lines|length > 0
   failed_when: false
   check_mode: false
   tags:
@@ -1258,15 +1256,13 @@
     - high
     - checkonly
     - shell
-    - notimplemented
 
 - name: "RHEL 8 must enable the hardware random number generator entropy gatherer service."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010471_result
-  changed_when: RHEL_08_010471_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  ansible.builtin.systemd:
+    name: rngd
+    state: started
+    enabled: true
+  when: '"rngd.service" in services'
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000480-GPOS-00227
@@ -1274,17 +1270,12 @@
     - RHEL-08-010471
     - V-230285
     - low
-    - checkonly
-    - shell
-    - notimplemented
+    - systemd
 
 - name: "RHEL 8 must have the packages required to use the hardware random number generator entropy gatherer service."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010472_result
-  changed_when: RHEL_08_010472_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  ansible.builtin.dnf:
+    name: rng-tools
+    state: present
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000480-GPOS-00227
@@ -1292,15 +1283,13 @@
     - RHEL-08-010472
     - V-244527
     - low
-    - checkonly
-    - shell
-    - notimplemented
+    - dnf
 
 - name: "The RHEL 8 SSH public host key files must have mode 0644 or less permissive."
   ansible.builtin.shell: |
-    /bin/false
+    /usr/bin/find /etc/ssh -name ssh\*_key.pub -type f -perm /23 -printf "%u %g %m %p\n"
   register: RHEL_08_010480_result
-  changed_when: RHEL_08_010480_result.rc|int > 0
+  changed_when: RHEL_08_010480_result.stdout_lines|length > 0
   failed_when: false
   check_mode: false
   tags:
@@ -1312,13 +1301,12 @@
     - medium
     - checkonly
     - shell
-    - notimplemented
 
 - name: "The RHEL 8 SSH private host key files must have mode 0600 or less permissive."
   ansible.builtin.shell: |
-    /bin/false
+    /usr/bin/find /etc/ssh -name ssh\*_key -type f -perm /37 -printf "%u %g %m %p\n"
   register: RHEL_08_010490_result
-  changed_when: RHEL_08_010490_result.rc|int > 0
+  changed_when: RHEL_08_010490_result.stdout_lines|length > 0
   failed_when: false
   check_mode: false
   tags:
@@ -1330,15 +1318,17 @@
     - medium
     - checkonly
     - shell
-    - notimplemented
 
 - name: "The RHEL 8 SSH daemon must perform strict mode checking of home directory configuration files."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010500_result
-  changed_when: RHEL_08_010500_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  ansible.builtin.lineinfile:
+    create: true
+    owner: root
+    group: root
+    mode: 0600
+    path: /etc/ssh/sshd_config
+    regexp: "(?i)^#?StrictModes"
+    line: "StrictModes yes"
+  notify: "restart sshd"
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000480-GPOS-00227
@@ -1346,17 +1336,18 @@
     - RHEL-08-010500
     - V-230288
     - medium
-    - checkonly
-    - shell
-    - notimplemented
+    - sshd
 
 - name: "The RHEL 8 SSH daemon must not allow compression or must only allow compression after successful authentication."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010510_result
-  changed_when: RHEL_08_010510_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  ansible.builtin.lineinfile:
+    create: true
+    owner: root
+    group: root
+    mode: 0600
+    path: /etc/ssh/sshd_config
+    regexp: "(?i)^#?Compression"
+    line: "Compression no"
+  notify: "restart sshd"
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000480-GPOS-00227
@@ -1364,17 +1355,18 @@
     - RHEL-08-010510
     - V-230289
     - medium
-    - checkonly
-    - shell
-    - notimplemented
+    - sshd
 
 - name: "The RHEL 8 SSH daemon must not allow authentication using known host’s authentication."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010520_result
-  changed_when: RHEL_08_010520_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  ansible.builtin.lineinfile:
+    create: true
+    owner: root
+    group: root
+    mode: 0600
+    path: /etc/ssh/sshd_config
+    regexp: "(?i)^#?IgnoreUserKnownHosts"
+    line: "IgnoreUserKnownHosts yes"
+  notify: "restart sshd"
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000480-GPOS-00227
@@ -1382,17 +1374,21 @@
     - RHEL-08-010520
     - V-230290
     - medium
-    - checkonly
-    - shell
-    - notimplemented
+    - sshd
 
 - name: "The RHEL 8 SSH daemon must not allow Kerberos authentication, except to fulfill documented and validated mission requirements."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010521_result
-  changed_when: RHEL_08_010521_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  ansible.builtin.lineinfile:
+    create: true
+    owner: root
+    group: root
+    mode: 0600
+    path: /etc/ssh/sshd_config
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
+  loop:
+      - { regexp: "(?i)^#?KerberosAuthentication", line: "KerberosAuthentication no" }
+      - { regexp: "(?i)^#?GSSAPIAuthentication", line: "GSSAPIAuthentication no" }
+  notify: "restart sshd"
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000480-GPOS-00227
@@ -1400,17 +1396,17 @@
     - RHEL-08-010521
     - V-230291
     - medium
-    - checkonly
-    - shell
-    - notimplemented
 
 - name: "The RHEL 8 SSH daemon must not allow GSSAPI authentication, except to fulfill documented and validated mission requirements."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010522_result
-  changed_when: RHEL_08_010522_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  ansible.builtin.lineinfile:
+    create: true
+    owner: root
+    group: root
+    mode: 0600
+    path: /etc/ssh/sshd_config
+    regexp: "(?i)^#?GSSAPIAuthentication"
+    line: "GSSAPIAuthentication no"
+  notify: "restart sshd"
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000480-GPOS-00227
@@ -1418,13 +1414,11 @@
     - RHEL-08-010522
     - V-244528
     - medium
-    - checkonly
-    - shell
-    - notimplemented
+    - sshd
 
 - name: "RHEL 8 must use a separate file system for /var."
   ansible.builtin.shell: |
-    /bin/false
+    /usr/bin/grep -qiPs '^(?=[\s]*+[^#])(?=.*\s*\/var\s)' /etc/fstab
   register: RHEL_08_010540_result
   changed_when: RHEL_08_010540_result.rc|int > 0
   failed_when: false
@@ -1438,11 +1432,10 @@
     - low
     - checkonly
     - shell
-    - notimplemented
 
 - name: "RHEL 8 must use a separate file system for /var/log."
   ansible.builtin.shell: |
-    /bin/false
+    /usr/bin/grep -qiPs '^(?=[\s]*+[^#])(?=.*\s*\/var\/log\s)' /etc/fstab
   register: RHEL_08_010541_result
   changed_when: RHEL_08_010541_result.rc|int > 0
   failed_when: false
@@ -1456,11 +1449,10 @@
     - low
     - checkonly
     - shell
-    - notimplemented
 
 - name: "RHEL 8 must use a separate file system for the system audit data path."
   ansible.builtin.shell: |
-    /bin/false
+    /usr/bin/grep -qiPs '^(?=[\s]*+[^#])(?=.*\s*\/var\/log\/audit\s)' /etc/fstab
   register: RHEL_08_010542_result
   changed_when: RHEL_08_010542_result.rc|int > 0
   failed_when: false
@@ -1474,11 +1466,10 @@
     - low
     - checkonly
     - shell
-    - notimplemented
 
 - name: "A separate RHEL 8 filesystem must be used for the /tmp directory."
   ansible.builtin.shell: |
-    /bin/false
+    /usr/bin/grep -qiPs '^(?=[\s]*+[^#])(?=.*\s*\/tmp\s)' /etc/fstab
   register: RHEL_08_010543_result
   changed_when: RHEL_08_010543_result.rc|int > 0
   failed_when: false
@@ -1492,11 +1483,10 @@
     - medium
     - checkonly
     - shell
-    - notimplemented
 
 - name: "RHEL 8 must use a separate file system for /var/tmp."
   ansible.builtin.shell: |
-    /bin/false
+    /usr/bin/grep -qiPs '^(?=[\s]*+[^#])(?=.*\s*\/var\/tmp\s)' /etc/fstab
   register: RHEL_08_010544_result
   changed_when: RHEL_08_010544_result.rc|int > 0
   failed_when: false
@@ -1510,15 +1500,17 @@
     - medium
     - checkonly
     - shell
-    - notimplemented
 
 - name: "RHEL 8 must not permit direct logons to the root account using remote access via SSH."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010550_result
-  changed_when: RHEL_08_010550_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  ansible.builtin.lineinfile:
+    create: true
+    owner: root
+    group: root
+    mode: 0600
+    path: /etc/ssh/sshd_config
+    regexp: "(?i)^#?PermitRootLogin"
+    line: "PermitRootLogin no"
+  notify: "restart sshd"
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000109-GPOS-00056
@@ -1526,17 +1518,14 @@
     - RHEL-08-010550
     - V-230296
     - medium
-    - checkonly
-    - shell
-    - notimplemented
+    - sshd
 
 - name: "The auditd service must be running in RHEL 8."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010560_result
-  changed_when: RHEL_08_010560_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  ansible.builtin.systemd:
+    name: auditd
+    state: started
+    enabled: true
+  when: '"auditd.service" in services'
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000480-GPOS-00227
@@ -1544,17 +1533,13 @@
     - RHEL-08-010560
     - V-230297
     - medium
-    - checkonly
-    - shell
-    - notimplemented
 
 - name: "The rsyslog service must be running in RHEL 8."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010561_result
-  changed_when: RHEL_08_010561_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  ansible.builtin.systemd:
+    name: rsyslog
+    state: started
+    enabled: true
+  when: '"rsyslog.service" in services'
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000480-GPOS-00227
@@ -1562,17 +1547,12 @@
     - RHEL-08-010561
     - V-230298
     - medium
-    - checkonly
-    - shell
-    - notimplemented
 
 - name: "RHEL 8 must prevent files with the setuid and setgid bit set from being executed on file systems that contain user home directories."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010570_result
-  changed_when: RHEL_08_010570_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  ansible.builtin.replace:
+    path: /etc/fstab
+    regexp: "^(?=.*/home)(?!#|^$|.*nosuid)(\\S*\\s*\\S*\\s*\\S*\\s*)(\\S*)(\\s*\\S*\\s*)(\\S*\\s*)$"
+    replace: \1\2,nosuid\3\4
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000480-GPOS-00227
@@ -1580,17 +1560,12 @@
     - RHEL-08-010570
     - V-230299
     - medium
-    - checkonly
-    - shell
-    - notimplemented
 
 - name: "RHEL 8 must prevent files with the setuid and setgid bit set from being executed on the /boot directory."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010571_result
-  changed_when: RHEL_08_010571_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  ansible.builtin.replace:
+    path: /etc/fstab
+    regexp: "^(?=.*/boot)(?!#|^$|.*nosuid)(\\S*\\s*\\S*\\s*\\S*\\s*)(\\S*)(\\s*\\S*\\s*)(\\S*\\s*)$"
+    replace: \1\2,nosuid\3\4
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000480-GPOS-00227
@@ -1598,17 +1573,12 @@
     - RHEL-08-010571
     - V-230300
     - medium
-    - checkonly
-    - shell
-    - notimplemented
 
 - name: "RHEL 8 must prevent files with the setuid and setgid bit set from being executed on the /boot/efi directory."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010572_result
-  changed_when: RHEL_08_010572_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  ansible.builtin.replace:
+    path: /etc/fstab
+    regexp: "^(?=.*/boot/efi)(?!#|^$|.*nosuid)(\\S*\\s*\\S*\\s*\\S*\\s*)(\\S*)(\\s*\\S*\\s*)(\\S*\\s*)$"
+    replace: \1\2,nosuid\3\4
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000480-GPOS-00227
@@ -1616,17 +1586,12 @@
     - RHEL-08-010572
     - V-244530
     - medium
-    - checkonly
-    - shell
-    - notimplemented
 
 - name: "RHEL 8 must prevent special devices on non-root local partitions."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010580_result
-  changed_when: RHEL_08_010580_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  ansible.builtin.replace:
+    path: /etc/fstab
+    regexp: "^(?!#|^$|.*/\\s|.*nfs|.*nodev)(\\S*\\s*\\S*\\s*\\S*\\s*)(\\S*)(\\s*\\S*\\s*)(\\S*\\s*)$"
+    replace: \1\2,nodev\3\4
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000480-GPOS-00227
@@ -1634,17 +1599,12 @@
     - RHEL-08-010580
     - V-230301
     - medium
-    - checkonly
-    - shell
-    - notimplemented
 
 - name: "RHEL 8 must prevent code from being executed on file systems that contain user home directories."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010590_result
-  changed_when: RHEL_08_010590_result.rc|int > 0
-  failed_when: false
-  check_mode: false
+  ansible.builtin.replace:
+    path: /etc/fstab
+    regexp: "^(?=.*/home)(?!#|^$|.*noexec)(\\S*\\s*\\S*\\s*\\S*\\s*)(\\S*)(\\s*\\S*\\s*)(\\S*\\s*)$"
+    replace: \1\2,noexec\3\4
   tags:
     - rhel8-disa-stig-v1r3
     - SRG-OS-000480-GPOS-00227
@@ -1652,9 +1612,6 @@
     - RHEL-08-010590
     - V-230302
     - medium
-    - checkonly
-    - shell
-    - notimplemented
 
 - name: "RHEL 8 must prevent special devices on file systems that are used with removable media."
   ansible.builtin.shell: |
