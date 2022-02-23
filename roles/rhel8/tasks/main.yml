@@ -1897,7 +1897,6 @@
 
 - name: "All RHEL 8 local interactive users must have a home directory assigned in the /etc/passwd file."
   ansible.builtin.shell: |
-  shell: |
     for i in $(/sbin/pwck -r | /bin/grep -iP "(?=user.*directory.*does not exist)" | /bin/awk -F\' {'print $2'})
     do
       /bin/awk -F: -v i=$i '$1 == i && $3 > 799 && $7 != "/sbin/nologin" {print "Interactive user ("$1") has a missing home directory ("$6")."}' /etc/passwd
