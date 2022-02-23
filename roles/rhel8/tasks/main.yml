@@ -1613,59 +1613,62 @@
     - V-230302
     - medium
 
-- name: "RHEL 8 must prevent special devices on file systems that are used with removable media."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010600_result
-  changed_when: RHEL_08_010600_result.rc|int > 0
-  failed_when: false
-  check_mode: false
-  tags:
-    - rhel8-disa-stig-v1r3
-    - SRG-OS-000480-GPOS-00227
-    - SV-230303r627750_rule
-    - RHEL-08-010600
-    - V-230303
-    - medium
-    - checkonly
-    - shell
-    - notimplemented
+# -----------------------------------------------------------------------------
+# Removable media mountpoints are too variable to handle programatically
+# - name: "RHEL 8 must prevent special devices on file systems that are used with removable media."
+#   ansible.builtin.shell: |
+#     /bin/false
+#   register: RHEL_08_010600_result
+#   changed_when: RHEL_08_010600_result.rc|int > 0
+#   failed_when: false
+#   check_mode: false
+#   tags:
+#     - rhel8-disa-stig-v1r3
+#     - SRG-OS-000480-GPOS-00227
+#     - SV-230303r627750_rule
+#     - RHEL-08-010600
+#     - V-230303
+#     - medium
+#     - checkonly
+#     - shell
+#     - notimplemented
 
-- name: "RHEL 8 must prevent code from being executed on file systems that are used with removable media."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010610_result
-  changed_when: RHEL_08_010610_result.rc|int > 0
-  failed_when: false
-  check_mode: false
-  tags:
-    - rhel8-disa-stig-v1r3
-    - SRG-OS-000480-GPOS-00227
-    - SV-230304r627750_rule
-    - RHEL-08-010610
-    - V-230304
-    - medium
-    - checkonly
-    - shell
-    - notimplemented
+# - name: "RHEL 8 must prevent code from being executed on file systems that are used with removable media."
+#   ansible.builtin.shell: |
+#     /bin/false
+#   register: RHEL_08_010610_result
+#   changed_when: RHEL_08_010610_result.rc|int > 0
+#   failed_when: false
+#   check_mode: false
+#   tags:
+#     - rhel8-disa-stig-v1r3
+#     - SRG-OS-000480-GPOS-00227
+#     - SV-230304r627750_rule
+#     - RHEL-08-010610
+#     - V-230304
+#     - medium
+#     - checkonly
+#     - shell
+#     - notimplemented
 
-- name: "RHEL 8 must prevent files with the setuid and setgid bit set from being executed on file systems that are used with removable media."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010620_result
-  changed_when: RHEL_08_010620_result.rc|int > 0
-  failed_when: false
-  check_mode: false
-  tags:
-    - rhel8-disa-stig-v1r3
-    - SRG-OS-000480-GPOS-00227
-    - SV-230305r627750_rule
-    - RHEL-08-010620
-    - V-230305
-    - medium
-    - checkonly
-    - shell
-    - notimplemented
+# - name: "RHEL 8 must prevent files with the setuid and setgid bit set from being executed on file systems that are used with removable media."
+#   ansible.builtin.shell: |
+#     /bin/false
+#   register: RHEL_08_010620_result
+#   changed_when: RHEL_08_010620_result.rc|int > 0
+#   failed_when: false
+#   check_mode: false
+#   tags:
+#     - rhel8-disa-stig-v1r3
+#     - SRG-OS-000480-GPOS-00227
+#     - SV-230305r627750_rule
+#     - RHEL-08-010620
+#     - V-230305
+#     - medium
+#     - checkonly
+#     - shell
+#     - notimplemented
+# -----------------------------------------------------------------------------
 
 - name: "RHEL 8 must prevent code from being executed on file systems that are imported via Network File System (NFS)."
   ansible.builtin.shell: |
@@ -1717,27 +1720,29 @@
     - RHEL-08-010650
     - V-230308
     - medium
-    - checkonly
-    - shell
-    - notimplemented
 
-- name: "Local RHEL 8 initialization files must not execute world-writable programs."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010660_result
-  changed_when: RHEL_08_010660_result.rc|int > 0
-  failed_when: false
-  check_mode: false
-  tags:
-    - rhel8-disa-stig-v1r3
-    - SRG-OS-000480-GPOS-00227
-    - SV-230309r627750_rule
-    - RHEL-08-010660
-    - V-230309
-    - medium
-    - checkonly
-    - shell
-    - notimplemented
+# -----------------------------------------------------------------------------
+# This would require checking every line of every dotfile in every user's home
+# directory, which is non-trivial to implement and would be too impactful on
+# large filesystems to run with any regularity.
+#
+# - name: "Local RHEL 8 initialization files must not execute world-writable programs."
+#   ansible.builtin.shell: |
+#     /bin/false
+#   register: RHEL_08_010660_result
+#   changed_when: RHEL_08_010660_result.rc|int > 0
+#   failed_when: false
+#   check_mode: false
+#   tags:
+#     - rhel8-disa-stig-v1r3
+#     - SRG-OS-000480-GPOS-00227
+#     - SV-230309r627750_rule
+#     - RHEL-08-010660
+#     - V-230309
+#     - medium
+#     - checkonly
+#     - shell
+#     - notimplemented
 
 - name: "RHEL 8 must disable kernel dumps unless needed."
   ansible.builtin.shell: |
@@ -1863,25 +1868,29 @@
     - medium
     - checkonly
     - shell
-    - notimplemented
 
-- name: "Executable search paths within the initialization files of all local interactive RHEL 8 users must only contain paths that resolve to the system default or the users home directory."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010690_result
-  changed_when: RHEL_08_010690_result.rc|int > 0
-  failed_when: false
-  check_mode: false
-  tags:
-    - rhel8-disa-stig-v1r3
-    - SRG-OS-000480-GPOS-00227
-    - SV-230317r627750_rule
-    - RHEL-08-010690
-    - V-230317
-    - medium
-    - checkonly
-    - shell
-    - notimplemented
+# -----------------------------------------------------------------------------
+# This would require checking every line of every dotfile in every user's home
+# directory, which is non-trivial to implement and would be too impactful on
+# large filesystems to run with any regularity.
+#
+# - name: "Executable search paths within the initialization files of all local interactive RHEL 8 users must only contain paths that resolve to the system default or the users home directory."
+#   ansible.builtin.shell: |
+#     /bin/false
+#   register: RHEL_08_010690_result
+#   changed_when: RHEL_08_010690_result.rc|int > 0
+#   failed_when: false
+#   check_mode: false
+#   tags:
+#     - rhel8-disa-stig-v1r3
+#     - SRG-OS-000480-GPOS-00227
+#     - SV-230317r627750_rule
+#     - RHEL-08-010690
+#     - V-230317
+#     - medium
+#     - checkonly
+#     - shell
+#     - notimplemented
 
 - name: "All RHEL 8 world-writable directories must be owned by root, sys, bin, or an application user."
   ansible.builtin.shell: |
@@ -1953,25 +1962,24 @@
     - medium
     - checkonly
     - shell
-    - notimplemented
 
-- name: "All RHEL 8 local interactive user home directory files must have mode 0750 or less permissive."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010731_result
-  changed_when: RHEL_08_010731_result.rc|int > 0
-  failed_when: false
-  check_mode: false
-  tags:
-    - rhel8-disa-stig-v1r3
-    - SRG-OS-000480-GPOS-00227
-    - SV-244531r743842_rule
-    - RHEL-08-010731
-    - V-244531
-    - medium
-    - checkonly
-    - shell
-    - notimplemented
+# - name: "All RHEL 8 local interactive user home directory files must have mode 0750 or less permissive."
+#   ansible.builtin.shell: |
+#     /bin/false
+#   register: RHEL_08_010731_result
+#   changed_when: RHEL_08_010731_result.rc|int > 0
+#   failed_when: false
+#   check_mode: false
+#   tags:
+#     - rhel8-disa-stig-v1r3
+#     - SRG-OS-000480-GPOS-00227
+#     - SV-244531r743842_rule
+#     - RHEL-08-010731
+#     - V-244531
+#     - medium
+#     - checkonly
+#     - shell
+#     - notimplemented
 
 - name: "All RHEL 8 local interactive user home directories must be group-owned by the home directory owner’s primary group."
   ansible.builtin.shell: |
@@ -1989,25 +1997,24 @@
     - medium
     - checkonly
     - shell
-    - notimplemented
 
-- name: "RHEL 8 must be configured so that all files and directories contained in local interactive user home directories are group-owned by a group of which the home directory owner is a member."
-  ansible.builtin.shell: |
-    /bin/false
-  register: RHEL_08_010741_result
-  changed_when: RHEL_08_010741_result.rc|int > 0
-  failed_when: false
-  check_mode: false
-  tags:
-    - rhel8-disa-stig-v1r3
-    - SRG-OS-000480-GPOS-00227
-    - SV-244532r743845_rule
-    - RHEL-08-010741
-    - V-244532
-    - medium
-    - checkonly
-    - shell
-    - notimplemented
+# - name: "RHEL 8 must be configured so that all files and directories contained in local interactive user home directories are group-owned by a group of which the home directory owner is a member."
+#   ansible.builtin.shell: |
+#     /bin/false
+#   register: RHEL_08_010741_result
+#   changed_when: RHEL_08_010741_result.rc|int > 0
+#   failed_when: false
+#   check_mode: false
+#   tags:
+#     - rhel8-disa-stig-v1r3
+#     - SRG-OS-000480-GPOS-00227
+#     - SV-244532r743845_rule
+#     - RHEL-08-010741
+#     - V-244532
+#     - medium
+#     - checkonly
+#     - shell
+#     - notimplemented
 
 - name: "All RHEL 8 local interactive user home directories defined in the /etc/passwd file must exist."
   ansible.builtin.shell: |
