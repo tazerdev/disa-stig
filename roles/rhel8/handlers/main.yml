@@ -15,3 +15,11 @@
     daemon_reload: true
   when: not kickstart|bool and '"rsyslog.service" in ansible_facts.services'
   listen: "restart rsyslog"
+
+- name: 'Restarting sssd'
+  ansible.builtin.systemd:
+    name: sssd
+    state: restarted
+    enabled: true
+  when: not kickstart|bool and '"sssd.service" in ansible_facts.services'
+  listen: "restart sssd"
