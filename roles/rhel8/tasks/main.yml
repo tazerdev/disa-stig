@@ -1794,7 +1794,7 @@
     - medium
 
 - name: "RHEL 8 must disable storing core dumps."
- ansible.builtin.ini_file:
+  ansible.builtin.ini_file:
     path: /etc/systemd/coredump.conf
     option: "Storage"
     value: "None"
