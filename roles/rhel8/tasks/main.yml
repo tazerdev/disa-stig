@@ -1671,7 +1671,7 @@
 # -----------------------------------------------------------------------------
 
 - name: "RHEL 8 must prevent code from being executed on file systems that are imported via Network File System (NFS)."
-  replace:
+  ansible.builtin.replace:
     path: /etc/fstab
     regexp: "^(?!#|^$|.*noexec)(\\S*\\s*\\S*\\s*)(nfs\\s*)(\\S*)(\\s*\\S*\\s*)(\\S*\\s*)$"
     replace: \1\2\3,noexec\4\5
@@ -1684,7 +1684,7 @@
     - medium
 
 - name: "RHEL 8 must prevent special devices on file systems that are imported via Network File System (NFS)."
-  replace:
+  ansible.builtin.replace:
     path: /etc/fstab
     regexp: "^(?!#|^$|.*nodev)(\\S*\\s*\\S*\\s*)(nfs\\s*)(\\S*)(\\s*\\S*\\s*)(\\S*\\s*)$"
     replace: \1\2\3,nodev\4\5
@@ -1697,7 +1697,7 @@
     - medium
 
 - name: "RHEL 8 must prevent files with the setuid and setgid bit set from being executed on file systems that are imported via Network File System (NFS)."
-  replace:
+  ansible.builtin.replace:
     path: /etc/fstab
     regexp: "^(?!#|^$|.*nosuid)(\\S*\\s*\\S*\\s*)(nfs\\s*)(\\S*)(\\s*\\S*\\s*)(\\S*\\s*)$"
     replace: \1\2\3,nosuid\4\5
@@ -1733,7 +1733,7 @@
 #     - notimplemented
 
 - name: "RHEL 8 must disable kernel dumps unless needed."
-  systemd:
+  ansible.builtin.systemd:
     name: kdump
     state: started
     enabled: true
@@ -1747,7 +1747,7 @@
     - medium
 
 - name: "RHEL 8 must disable the kernel.core_pattern."
-   sysctl:
+  ansible.builtin.sysctl:
     name: kernel.core_pattern
     value: "|/bin/false"
     reload: yes
@@ -1763,7 +1763,7 @@
     - medium
 
 - name: "RHEL 8 must disable acquiring, saving, and processing core dumps."
-  systemd:
+  ansible.builtin.systemd:
     name: systemd-coredump.socket
     masked: true
     enabled: true
@@ -1777,7 +1777,7 @@
     - medium
 
 - name: "RHEL 8 must disable core dumps for all users."
-  lineinfile:
+  ansible.builtin.lineinfile:
     create: true
     owner: root
     group: root
@@ -1794,7 +1794,7 @@
     - medium
 
 - name: "RHEL 8 must disable storing core dumps."
- ini_file:
+ ansible.builtin.ini_file:
     path: /etc/systemd/coredump.conf
     option: "Storage"
     value: "None"
@@ -1808,7 +1808,7 @@
     - medium
 
 - name: "RHEL 8 must disable core dump backtraces."
-  ini_file:
+  ansible.builtin.ini_file:
     path: /etc/systemd/coredump.conf
     option: "ProcessSizeMax"
     value: "0"
@@ -2021,7 +2021,7 @@
     - shell
 
 - name: "All RHEL 8 local interactive user accounts must be assigned a home directory upon creation."
-  lineinfile:
+  ansible.builtin.lineinfile:
     create: true
     owner: root
     group: root
