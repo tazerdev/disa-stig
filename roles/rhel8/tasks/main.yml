@@ -881,7 +881,7 @@
     value: 1
     reload: yes
     ignoreerrors: true
-    sysctl_file: /etc/sysctl.d/99-disa-stig.conf
+    sysctl_file: '{{ sysctl_rules_file }}'
     sysctl_set: true
   tags:
     - rhel8-disa-stig-v1r3
@@ -898,7 +898,7 @@
     value: 1
     reload: yes
     ignoreerrors: true
-    sysctl_file: /etc/sysctl.d/99-disa-stig.conf
+    sysctl_file: '{{ sysctl_rules_file }}'
     sysctl_set: true
   tags:
     - rhel8-disa-stig-v1r3
@@ -915,7 +915,7 @@
     value: 1
     reload: yes
     ignoreerrors: true
-    sysctl_file: /etc/sysctl.d/99-disa-stig.conf
+    sysctl_file: '{{ sysctl_rules_file }}'
     sysctl_set: true
   tags:
     - rhel8-disa-stig-v1r3
@@ -932,7 +932,7 @@
     value: 1
     reload: yes
     ignoreerrors: true
-    sysctl_file: /etc/sysctl.d/99-disa-stig.conf
+    sysctl_file: '{{ sysctl_rules_file }}'
     sysctl_set: true
   tags:
     - rhel8-disa-stig-v1r3
@@ -949,7 +949,7 @@
     value: 2
     reload: yes
     ignoreerrors: true
-    sysctl_file: /etc/sysctl.d/99-disa-stig.conf
+    sysctl_file: '{{ sysctl_rules_file }}'
     sysctl_set: true
   tags:
     - rhel8-disa-stig-v1r3
@@ -1177,7 +1177,7 @@
     value: 2
     reload: yes
     ignoreerrors: true
-    sysctl_file: /etc/sysctl.d/10-disa-stig.conf
+    sysctl_file: '{{ sysctl_rules_file }}'
     sysctl_set: true
   tags:
     - rhel8-disa-stig-v1r3
