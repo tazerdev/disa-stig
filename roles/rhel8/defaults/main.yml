@@ -11,7 +11,7 @@ auditd_path: /etc/audit/rules.d/disa-stig.conf
 # sysctl merges files with /usr/lib/sysctl.d based on order, so we need to put
 # stig controls in a file numbered with a higher precedence so these controls
 # will be applied later and override earlier settings
-sysctl_path: /etc/sysctl.d/99-disa-stig.conf
+sysctl_rules_file: /etc/sysctl.d/99-disa-stig.conf
 
 selinux_policy: targeted
 
